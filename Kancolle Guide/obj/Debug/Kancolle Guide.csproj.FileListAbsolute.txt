@@ -1,0 +1,10 @@
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Debug\Kancolle Guide.exe.config
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Debug\Kancolle Guide.exe
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Debug\Kancolle Guide.pdb
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Guide.csprojResolveAssemblyReference.cache
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Guide.Form1.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Guide.Properties.Resources.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Guide.csproj.GenerateResource.Cache
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Guide.exe
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Guide.pdb
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Guide.Form2.resources
