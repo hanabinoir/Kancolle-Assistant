@@ -33,9 +33,6 @@
             this.dgvType = new System.Windows.Forms.DataGridView();
             this.dgvClass = new System.Windows.Forms.DataGridView();
             this.dgvShip = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,18 +49,18 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblTime = new System.Windows.Forms.Label();
-            this.lblRg = new System.Windows.Forms.Label();
-            this.lblSpd = new System.Windows.Forms.Label();
-            this.lblAc = new System.Windows.Forms.Label();
-            this.lblLck = new System.Windows.Forms.Label();
-            this.lblLOC = new System.Windows.Forms.Label();
+            this.lblRange = new System.Windows.Forms.Label();
+            this.lblSpeed = new System.Windows.Forms.Label();
+            this.lblAircraft = new System.Windows.Forms.Label();
+            this.lblLuck = new System.Windows.Forms.Label();
+            this.lblLOS = new System.Windows.Forms.Label();
             this.lblASW = new System.Windows.Forms.Label();
             this.lblAA = new System.Windows.Forms.Label();
-            this.lblTpd = new System.Windows.Forms.Label();
+            this.lblTorpedo = new System.Windows.Forms.Label();
             this.lblHP = new System.Windows.Forms.Label();
             this.lblArmor = new System.Windows.Forms.Label();
-            this.lblEv = new System.Windows.Forms.Label();
-            this.lblFp = new System.Windows.Forms.Label();
+            this.lblEvasion = new System.Windows.Forms.Label();
+            this.lblFirpower = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -74,9 +71,9 @@
             this.colSteel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colBxt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imgLst = new System.Windows.Forms.ImageList(this.components);
-            this.btnImg = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblNo = new System.Windows.Forms.Label();
+            this.btnImg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShip)).BeginInit();
@@ -88,7 +85,7 @@
             // dgvType
             // 
             this.dgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvType.Location = new System.Drawing.Point(12, 45);
+            this.dgvType.Location = new System.Drawing.Point(12, 12);
             this.dgvType.Name = "dgvType";
             this.dgvType.Size = new System.Drawing.Size(136, 150);
             this.dgvType.TabIndex = 0;
@@ -96,7 +93,7 @@
             // dgvClass
             // 
             this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClass.Location = new System.Drawing.Point(154, 45);
+            this.dgvClass.Location = new System.Drawing.Point(154, 12);
             this.dgvClass.Name = "dgvClass";
             this.dgvClass.Size = new System.Drawing.Size(136, 150);
             this.dgvClass.TabIndex = 1;
@@ -104,37 +101,10 @@
             // dgvShip
             // 
             this.dgvShip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShip.Location = new System.Drawing.Point(296, 45);
+            this.dgvShip.Location = new System.Drawing.Point(296, 12);
             this.dgvShip.Name = "dgvShip";
             this.dgvShip.Size = new System.Drawing.Size(136, 150);
             this.dgvShip.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Type";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(151, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Class";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(293, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Ship";
             // 
             // label4
             // 
@@ -257,7 +227,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(15, 215);
+            this.tabControl1.Location = new System.Drawing.Point(15, 182);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(417, 230);
@@ -266,18 +236,18 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.lblTime);
-            this.tabPage1.Controls.Add(this.lblRg);
-            this.tabPage1.Controls.Add(this.lblSpd);
-            this.tabPage1.Controls.Add(this.lblAc);
-            this.tabPage1.Controls.Add(this.lblLck);
-            this.tabPage1.Controls.Add(this.lblLOC);
+            this.tabPage1.Controls.Add(this.lblRange);
+            this.tabPage1.Controls.Add(this.lblSpeed);
+            this.tabPage1.Controls.Add(this.lblAircraft);
+            this.tabPage1.Controls.Add(this.lblLuck);
+            this.tabPage1.Controls.Add(this.lblLOS);
             this.tabPage1.Controls.Add(this.lblASW);
             this.tabPage1.Controls.Add(this.lblAA);
-            this.tabPage1.Controls.Add(this.lblTpd);
+            this.tabPage1.Controls.Add(this.lblTorpedo);
             this.tabPage1.Controls.Add(this.lblHP);
             this.tabPage1.Controls.Add(this.lblArmor);
-            this.tabPage1.Controls.Add(this.lblEv);
-            this.tabPage1.Controls.Add(this.lblFp);
+            this.tabPage1.Controls.Add(this.lblEvasion);
+            this.tabPage1.Controls.Add(this.lblFirpower);
             this.tabPage1.Controls.Add(this.btnEdit);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.btnDel);
@@ -311,113 +281,101 @@
             this.lblTime.TabIndex = 48;
             this.lblTime.Text = "05:00:00";
             // 
-            // lblRg
+            // lblRange
             // 
-            this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(59, 139);
-            this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(31, 13);
-            this.lblRg.TabIndex = 47;
-            this.lblRg.Text = "Long";
+            this.lblRange.AutoSize = true;
+            this.lblRange.Location = new System.Drawing.Point(59, 139);
+            this.lblRange.Name = "lblRange";
+            this.lblRange.Size = new System.Drawing.Size(0, 13);
+            this.lblRange.TabIndex = 47;
             // 
-            // lblSpd
+            // lblSpeed
             // 
-            this.lblSpd.AutoSize = true;
-            this.lblSpd.Location = new System.Drawing.Point(59, 113);
-            this.lblSpd.Name = "lblSpd";
-            this.lblSpd.Size = new System.Drawing.Size(30, 13);
-            this.lblSpd.TabIndex = 46;
-            this.lblSpd.Text = "Slow";
+            this.lblSpeed.AutoSize = true;
+            this.lblSpeed.Location = new System.Drawing.Point(59, 113);
+            this.lblSpeed.Name = "lblSpeed";
+            this.lblSpeed.Size = new System.Drawing.Size(0, 13);
+            this.lblSpeed.TabIndex = 46;
             // 
-            // lblAc
+            // lblAircraft
             // 
-            this.lblAc.AutoSize = true;
-            this.lblAc.Location = new System.Drawing.Point(59, 87);
-            this.lblAc.Name = "lblAc";
-            this.lblAc.Size = new System.Drawing.Size(19, 13);
-            this.lblAc.TabIndex = 45;
-            this.lblAc.Text = "12";
+            this.lblAircraft.AutoSize = true;
+            this.lblAircraft.Location = new System.Drawing.Point(59, 87);
+            this.lblAircraft.Name = "lblAircraft";
+            this.lblAircraft.Size = new System.Drawing.Size(0, 13);
+            this.lblAircraft.TabIndex = 45;
             // 
-            // lblLck
+            // lblLuck
             // 
-            this.lblLck.AutoSize = true;
-            this.lblLck.Location = new System.Drawing.Point(188, 139);
-            this.lblLck.Name = "lblLck";
-            this.lblLck.Size = new System.Drawing.Size(40, 13);
-            this.lblLck.TabIndex = 44;
-            this.lblLck.Text = "20 (79)";
+            this.lblLuck.AutoSize = true;
+            this.lblLuck.Location = new System.Drawing.Point(188, 139);
+            this.lblLuck.Name = "lblLuck";
+            this.lblLuck.Size = new System.Drawing.Size(0, 13);
+            this.lblLuck.TabIndex = 44;
             // 
-            // lblLOC
+            // lblLOS
             // 
-            this.lblLOC.AutoSize = true;
-            this.lblLOC.Location = new System.Drawing.Point(188, 113);
-            this.lblLOC.Name = "lblLOC";
-            this.lblLOC.Size = new System.Drawing.Size(40, 13);
-            this.lblLOC.TabIndex = 43;
-            this.lblLOC.Text = "12 (39)";
+            this.lblLOS.AutoSize = true;
+            this.lblLOS.Location = new System.Drawing.Point(188, 113);
+            this.lblLOS.Name = "lblLOS";
+            this.lblLOS.Size = new System.Drawing.Size(0, 13);
+            this.lblLOS.TabIndex = 43;
             // 
             // lblASW
             // 
             this.lblASW.AutoSize = true;
             this.lblASW.Location = new System.Drawing.Point(188, 87);
             this.lblASW.Name = "lblASW";
-            this.lblASW.Size = new System.Drawing.Size(13, 13);
+            this.lblASW.Size = new System.Drawing.Size(0, 13);
             this.lblASW.TabIndex = 42;
-            this.lblASW.Text = "0";
             // 
             // lblAA
             // 
             this.lblAA.AutoSize = true;
             this.lblAA.Location = new System.Drawing.Point(188, 61);
             this.lblAA.Name = "lblAA";
-            this.lblAA.Size = new System.Drawing.Size(40, 13);
+            this.lblAA.Size = new System.Drawing.Size(0, 13);
             this.lblAA.TabIndex = 41;
-            this.lblAA.Text = "31 (89)";
             // 
-            // lblTpd
+            // lblTorpedo
             // 
-            this.lblTpd.AutoSize = true;
-            this.lblTpd.Location = new System.Drawing.Point(188, 35);
-            this.lblTpd.Name = "lblTpd";
-            this.lblTpd.Size = new System.Drawing.Size(13, 13);
-            this.lblTpd.TabIndex = 40;
-            this.lblTpd.Text = "0";
+            this.lblTorpedo.AutoSize = true;
+            this.lblTorpedo.Location = new System.Drawing.Point(188, 35);
+            this.lblTorpedo.Name = "lblTorpedo";
+            this.lblTorpedo.Size = new System.Drawing.Size(0, 13);
+            this.lblTorpedo.TabIndex = 40;
             // 
             // lblHP
             // 
             this.lblHP.AutoSize = true;
             this.lblHP.Location = new System.Drawing.Point(59, 9);
             this.lblHP.Name = "lblHP";
-            this.lblHP.Size = new System.Drawing.Size(19, 13);
+            this.lblHP.Size = new System.Drawing.Size(0, 13);
             this.lblHP.TabIndex = 39;
-            this.lblHP.Text = "80";
             // 
             // lblArmor
             // 
             this.lblArmor.AutoSize = true;
             this.lblArmor.Location = new System.Drawing.Point(59, 35);
             this.lblArmor.Name = "lblArmor";
-            this.lblArmor.Size = new System.Drawing.Size(40, 13);
+            this.lblArmor.Size = new System.Drawing.Size(0, 13);
             this.lblArmor.TabIndex = 38;
-            this.lblArmor.Text = "75 (89)";
             // 
-            // lblEv
+            // lblEvasion
             // 
-            this.lblEv.AutoSize = true;
-            this.lblEv.Location = new System.Drawing.Point(59, 61);
-            this.lblEv.Name = "lblEv";
-            this.lblEv.Size = new System.Drawing.Size(40, 13);
-            this.lblEv.TabIndex = 37;
-            this.lblEv.Text = "24 (49)";
+            this.lblEvasion.AutoSize = true;
+            this.lblEvasion.Location = new System.Drawing.Point(59, 61);
+            this.lblEvasion.Name = "lblEvasion";
+            this.lblEvasion.Size = new System.Drawing.Size(0, 13);
+            this.lblEvasion.TabIndex = 37;
             // 
-            // lblFp
+            // lblFirpower
             // 
-            this.lblFp.AutoSize = true;
-            this.lblFp.Location = new System.Drawing.Point(188, 9);
-            this.lblFp.Name = "lblFp";
-            this.lblFp.Size = new System.Drawing.Size(40, 13);
-            this.lblFp.TabIndex = 36;
-            this.lblFp.Text = "82 (99)";
+            this.lblFirpower.AutoSize = true;
+            this.lblFirpower.Location = new System.Drawing.Point(188, 9);
+            this.lblFirpower.Name = "lblFirpower";
+            this.lblFirpower.Size = new System.Drawing.Size(0, 13);
+            this.lblFirpower.TabIndex = 36;
             // 
             // btnEdit
             // 
@@ -497,51 +455,50 @@
             this.imgLst.Images.SetKeyName(2, "Steel.png");
             this.imgLst.Images.SetKeyName(3, "Bauxite.png");
             // 
-            // btnImg
-            // 
-            this.btnImg.Image = global::Kancolle_Guide.Properties.Resources._001;
-            this.btnImg.Location = new System.Drawing.Point(462, 45);
-            this.btnImg.Name = "btnImg";
-            this.btnImg.Size = new System.Drawing.Size(218, 300);
-            this.btnImg.TabIndex = 3;
-            this.btnImg.UseVisualStyleBackColor = true;
-            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(530, 350);
+            this.lblName.Location = new System.Drawing.Point(536, 334);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(82, 24);
+            this.lblName.Size = new System.Drawing.Size(69, 24);
             this.lblName.TabIndex = 49;
-            this.lblName.Text = "Nagato";
+            this.lblName.Text = "Name";
             // 
-            // label16
+            // lblNo
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(547, 380);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(45, 13);
-            this.label16.TabIndex = 50;
-            this.label16.Text = "No. 001";
+            this.lblNo.AutoSize = true;
+            this.lblNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNo.Location = new System.Drawing.Point(551, 376);
+            this.lblNo.Name = "lblNo";
+            this.lblNo.Size = new System.Drawing.Size(29, 16);
+            this.lblNo.TabIndex = 50;
+            this.lblNo.Text = "No.";
+            // 
+            // btnImg
+            // 
+            this.btnImg.Location = new System.Drawing.Point(462, 12);
+            this.btnImg.Name = "btnImg";
+            this.btnImg.Size = new System.Drawing.Size(218, 300);
+            this.btnImg.TabIndex = 3;
+            this.btnImg.UseVisualStyleBackColor = true;
+            this.btnImg.Click += new System.EventHandler(this.btnImg_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 450);
-            this.Controls.Add(this.label16);
+            this.ClientSize = new System.Drawing.Size(692, 427);
+            this.Controls.Add(this.lblNo);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnImg);
             this.Controls.Add(this.dgvShip);
             this.Controls.Add(this.dgvClass);
             this.Controls.Add(this.dgvType);
             this.Name = "Form1";
             this.Text = "Kancolle Guide";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).EndInit();
@@ -561,9 +518,6 @@
         private System.Windows.Forms.DataGridView dgvClass;
         private System.Windows.Forms.DataGridView dgvShip;
         private System.Windows.Forms.Button btnImg;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -590,20 +544,20 @@
         private System.Windows.Forms.ColumnHeader colBxt;
         private System.Windows.Forms.ImageList imgLst;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label lblRg;
-        private System.Windows.Forms.Label lblSpd;
-        private System.Windows.Forms.Label lblAc;
-        private System.Windows.Forms.Label lblLck;
-        private System.Windows.Forms.Label lblLOC;
+        private System.Windows.Forms.Label lblRange;
+        private System.Windows.Forms.Label lblSpeed;
+        private System.Windows.Forms.Label lblAircraft;
+        private System.Windows.Forms.Label lblLuck;
+        private System.Windows.Forms.Label lblLOS;
         private System.Windows.Forms.Label lblASW;
         private System.Windows.Forms.Label lblAA;
-        private System.Windows.Forms.Label lblTpd;
+        private System.Windows.Forms.Label lblTorpedo;
         private System.Windows.Forms.Label lblHP;
         private System.Windows.Forms.Label lblArmor;
-        private System.Windows.Forms.Label lblEv;
-        private System.Windows.Forms.Label lblFp;
+        private System.Windows.Forms.Label lblEvasion;
+        private System.Windows.Forms.Label lblFirpower;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblNo;
     }
 }
 
