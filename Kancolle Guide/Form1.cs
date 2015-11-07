@@ -50,9 +50,13 @@ namespace Kancolle_Guide
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*lstRcp.View = View.Details;
+            lstRcp.View = View.Details;
             lstRcp.GridLines = true;
-            lstRcp.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);*/
+            lstRcp.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            lstRcp.Columns[0].ImageIndex = 0;
+            lstRcp.Columns[1].ImageIndex = 1;
+            lstRcp.Columns[2].ImageIndex = 2;
+            lstRcp.Columns[3].ImageIndex = 3;
 
             connection();
 

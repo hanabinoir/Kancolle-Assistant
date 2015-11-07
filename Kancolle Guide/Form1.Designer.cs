@@ -427,24 +427,25 @@
             this.lstRcp.Location = new System.Drawing.Point(8, 6);
             this.lstRcp.Name = "lstRcp";
             this.lstRcp.Size = new System.Drawing.Size(395, 192);
+            this.lstRcp.SmallImageList = this.imgLst;
             this.lstRcp.TabIndex = 0;
             this.lstRcp.UseCompatibleStateImageBehavior = false;
             // 
             // colFuel
             // 
-            this.colFuel.Text = "Fuel";
+            this.colFuel.Text = "";
             // 
             // colAmn
             // 
-            this.colAmn.Text = "Ammunition";
+            this.colAmn.Text = "";
             // 
             // colSteel
             // 
-            this.colSteel.Text = "Steel";
+            this.colSteel.Text = "";
             // 
             // colBxt
             // 
-            this.colBxt.Text = "Bauxite";
+            this.colBxt.Text = "";
             // 
             // imgLst
             // 
