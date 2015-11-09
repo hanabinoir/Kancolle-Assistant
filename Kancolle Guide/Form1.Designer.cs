@@ -55,16 +55,19 @@
             this.lblLuck = new System.Windows.Forms.Label();
             this.lblLOS = new System.Windows.Forms.Label();
             this.lblASW = new System.Windows.Forms.Label();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.lblAA = new System.Windows.Forms.Label();
             this.lblTorpedo = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.lblHP = new System.Windows.Forms.Label();
             this.lblArmor = new System.Windows.Forms.Label();
             this.lblEvasion = new System.Windows.Forms.Label();
             this.lblFirpower = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.lstRcp = new System.Windows.Forms.ListView();
             this.colFuel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colAmn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -87,24 +90,27 @@
             this.dgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvType.Location = new System.Drawing.Point(12, 12);
             this.dgvType.Name = "dgvType";
-            this.dgvType.Size = new System.Drawing.Size(136, 150);
+            this.dgvType.Size = new System.Drawing.Size(130, 150);
             this.dgvType.TabIndex = 0;
+            this.dgvType.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvType_CellClick);
             // 
             // dgvClass
             // 
             this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClass.Location = new System.Drawing.Point(154, 12);
+            this.dgvClass.Location = new System.Drawing.Point(151, 12);
             this.dgvClass.Name = "dgvClass";
-            this.dgvClass.Size = new System.Drawing.Size(136, 150);
+            this.dgvClass.Size = new System.Drawing.Size(130, 150);
             this.dgvClass.TabIndex = 1;
+            this.dgvClass.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellClick);
             // 
             // dgvShip
             // 
             this.dgvShip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShip.Location = new System.Drawing.Point(296, 12);
+            this.dgvShip.Location = new System.Drawing.Point(287, 12);
             this.dgvShip.Name = "dgvShip";
-            this.dgvShip.Size = new System.Drawing.Size(136, 150);
+            this.dgvShip.Size = new System.Drawing.Size(130, 150);
             this.dgvShip.TabIndex = 2;
+            this.dgvShip.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShip_CellClick);
             // 
             // label4
             // 
@@ -227,10 +233,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(15, 182);
+            this.tabControl1.Location = new System.Drawing.Point(12, 191);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(417, 230);
+            this.tabControl1.Size = new System.Drawing.Size(405, 224);
             this.tabControl1.TabIndex = 36;
             // 
             // tabPage1
@@ -242,16 +248,16 @@
             this.tabPage1.Controls.Add(this.lblLuck);
             this.tabPage1.Controls.Add(this.lblLOS);
             this.tabPage1.Controls.Add(this.lblASW);
+            this.tabPage1.Controls.Add(this.btnDel);
+            this.tabPage1.Controls.Add(this.btnAdd);
             this.tabPage1.Controls.Add(this.lblAA);
             this.tabPage1.Controls.Add(this.lblTorpedo);
+            this.tabPage1.Controls.Add(this.btnEdit);
             this.tabPage1.Controls.Add(this.lblHP);
             this.tabPage1.Controls.Add(this.lblArmor);
             this.tabPage1.Controls.Add(this.lblEvasion);
             this.tabPage1.Controls.Add(this.lblFirpower);
-            this.tabPage1.Controls.Add(this.btnEdit);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.btnDel);
-            this.tabPage1.Controls.Add(this.btnAdd);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.label7);
@@ -267,7 +273,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(409, 204);
+            this.tabPage1.Size = new System.Drawing.Size(397, 198);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Statistics";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -286,111 +292,59 @@
             this.lblRange.AutoSize = true;
             this.lblRange.Location = new System.Drawing.Point(59, 139);
             this.lblRange.Name = "lblRange";
-            this.lblRange.Size = new System.Drawing.Size(0, 13);
+            this.lblRange.Size = new System.Drawing.Size(10, 13);
             this.lblRange.TabIndex = 47;
+            this.lblRange.Text = "-";
             // 
             // lblSpeed
             // 
             this.lblSpeed.AutoSize = true;
             this.lblSpeed.Location = new System.Drawing.Point(59, 113);
             this.lblSpeed.Name = "lblSpeed";
-            this.lblSpeed.Size = new System.Drawing.Size(0, 13);
+            this.lblSpeed.Size = new System.Drawing.Size(10, 13);
             this.lblSpeed.TabIndex = 46;
+            this.lblSpeed.Text = "-";
             // 
             // lblAircraft
             // 
             this.lblAircraft.AutoSize = true;
             this.lblAircraft.Location = new System.Drawing.Point(59, 87);
             this.lblAircraft.Name = "lblAircraft";
-            this.lblAircraft.Size = new System.Drawing.Size(0, 13);
+            this.lblAircraft.Size = new System.Drawing.Size(10, 13);
             this.lblAircraft.TabIndex = 45;
+            this.lblAircraft.Text = "-";
             // 
             // lblLuck
             // 
             this.lblLuck.AutoSize = true;
             this.lblLuck.Location = new System.Drawing.Point(188, 139);
             this.lblLuck.Name = "lblLuck";
-            this.lblLuck.Size = new System.Drawing.Size(0, 13);
+            this.lblLuck.Size = new System.Drawing.Size(10, 13);
             this.lblLuck.TabIndex = 44;
+            this.lblLuck.Text = "-";
             // 
             // lblLOS
             // 
             this.lblLOS.AutoSize = true;
             this.lblLOS.Location = new System.Drawing.Point(188, 113);
             this.lblLOS.Name = "lblLOS";
-            this.lblLOS.Size = new System.Drawing.Size(0, 13);
+            this.lblLOS.Size = new System.Drawing.Size(10, 13);
             this.lblLOS.TabIndex = 43;
+            this.lblLOS.Text = "-";
             // 
             // lblASW
             // 
             this.lblASW.AutoSize = true;
             this.lblASW.Location = new System.Drawing.Point(188, 87);
             this.lblASW.Name = "lblASW";
-            this.lblASW.Size = new System.Drawing.Size(0, 13);
+            this.lblASW.Size = new System.Drawing.Size(10, 13);
             this.lblASW.TabIndex = 42;
-            // 
-            // lblAA
-            // 
-            this.lblAA.AutoSize = true;
-            this.lblAA.Location = new System.Drawing.Point(188, 61);
-            this.lblAA.Name = "lblAA";
-            this.lblAA.Size = new System.Drawing.Size(0, 13);
-            this.lblAA.TabIndex = 41;
-            // 
-            // lblTorpedo
-            // 
-            this.lblTorpedo.AutoSize = true;
-            this.lblTorpedo.Location = new System.Drawing.Point(188, 35);
-            this.lblTorpedo.Name = "lblTorpedo";
-            this.lblTorpedo.Size = new System.Drawing.Size(0, 13);
-            this.lblTorpedo.TabIndex = 40;
-            // 
-            // lblHP
-            // 
-            this.lblHP.AutoSize = true;
-            this.lblHP.Location = new System.Drawing.Point(59, 9);
-            this.lblHP.Name = "lblHP";
-            this.lblHP.Size = new System.Drawing.Size(0, 13);
-            this.lblHP.TabIndex = 39;
-            // 
-            // lblArmor
-            // 
-            this.lblArmor.AutoSize = true;
-            this.lblArmor.Location = new System.Drawing.Point(59, 35);
-            this.lblArmor.Name = "lblArmor";
-            this.lblArmor.Size = new System.Drawing.Size(0, 13);
-            this.lblArmor.TabIndex = 38;
-            // 
-            // lblEvasion
-            // 
-            this.lblEvasion.AutoSize = true;
-            this.lblEvasion.Location = new System.Drawing.Point(59, 61);
-            this.lblEvasion.Name = "lblEvasion";
-            this.lblEvasion.Size = new System.Drawing.Size(0, 13);
-            this.lblEvasion.TabIndex = 37;
-            // 
-            // lblFirpower
-            // 
-            this.lblFirpower.AutoSize = true;
-            this.lblFirpower.Location = new System.Drawing.Point(188, 9);
-            this.lblFirpower.Name = "lblFirpower";
-            this.lblFirpower.Size = new System.Drawing.Size(0, 13);
-            this.lblFirpower.TabIndex = 36;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::Kancolle_Guide.Properties.Resources.edit;
-            this.btnEdit.Location = new System.Drawing.Point(277, 132);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(24, 24);
-            this.btnEdit.TabIndex = 35;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.lblASW.Text = "-";
             // 
             // btnDel
             // 
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
-            this.btnDel.Location = new System.Drawing.Point(277, 39);
+            this.btnDel.Location = new System.Drawing.Point(367, 36);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(24, 24);
             this.btnDel.TabIndex = 34;
@@ -400,22 +354,117 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(277, 9);
+            this.btnAdd.Location = new System.Drawing.Point(367, 6);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(24, 24);
             this.btnAdd.TabIndex = 33;
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
+            // lblAA
+            // 
+            this.lblAA.AutoSize = true;
+            this.lblAA.Location = new System.Drawing.Point(188, 61);
+            this.lblAA.Name = "lblAA";
+            this.lblAA.Size = new System.Drawing.Size(10, 13);
+            this.lblAA.TabIndex = 41;
+            this.lblAA.Text = "-";
+            // 
+            // lblTorpedo
+            // 
+            this.lblTorpedo.AutoSize = true;
+            this.lblTorpedo.Location = new System.Drawing.Point(188, 35);
+            this.lblTorpedo.Name = "lblTorpedo";
+            this.lblTorpedo.Size = new System.Drawing.Size(10, 13);
+            this.lblTorpedo.TabIndex = 40;
+            this.lblTorpedo.Text = "-";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::Kancolle_Guide.Properties.Resources.edit;
+            this.btnEdit.Location = new System.Drawing.Point(367, 166);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(24, 24);
+            this.btnEdit.TabIndex = 35;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // lblHP
+            // 
+            this.lblHP.AutoSize = true;
+            this.lblHP.Location = new System.Drawing.Point(59, 9);
+            this.lblHP.Name = "lblHP";
+            this.lblHP.Size = new System.Drawing.Size(10, 13);
+            this.lblHP.TabIndex = 39;
+            this.lblHP.Text = "-";
+            // 
+            // lblArmor
+            // 
+            this.lblArmor.AutoSize = true;
+            this.lblArmor.Location = new System.Drawing.Point(59, 35);
+            this.lblArmor.Name = "lblArmor";
+            this.lblArmor.Size = new System.Drawing.Size(10, 13);
+            this.lblArmor.TabIndex = 38;
+            this.lblArmor.Text = "-";
+            // 
+            // lblEvasion
+            // 
+            this.lblEvasion.AutoSize = true;
+            this.lblEvasion.Location = new System.Drawing.Point(59, 61);
+            this.lblEvasion.Name = "lblEvasion";
+            this.lblEvasion.Size = new System.Drawing.Size(10, 13);
+            this.lblEvasion.TabIndex = 37;
+            this.lblEvasion.Text = "-";
+            // 
+            // lblFirpower
+            // 
+            this.lblFirpower.AutoSize = true;
+            this.lblFirpower.Location = new System.Drawing.Point(188, 9);
+            this.lblFirpower.Name = "lblFirpower";
+            this.lblFirpower.Size = new System.Drawing.Size(10, 13);
+            this.lblFirpower.TabIndex = 36;
+            this.lblFirpower.Text = "-";
+            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.lstRcp);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(409, 204);
+            this.tabPage2.Size = new System.Drawing.Size(397, 198);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Recipe";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(367, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 24);
+            this.button1.TabIndex = 37;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(367, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(24, 24);
+            this.button2.TabIndex = 36;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.Image = global::Kancolle_Guide.Properties.Resources.edit;
+            this.button3.Location = new System.Drawing.Point(367, 168);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(24, 24);
+            this.button3.TabIndex = 38;
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // lstRcp
             // 
@@ -426,7 +475,7 @@
             this.colBxt});
             this.lstRcp.Location = new System.Drawing.Point(8, 6);
             this.lstRcp.Name = "lstRcp";
-            this.lstRcp.Size = new System.Drawing.Size(395, 192);
+            this.lstRcp.Size = new System.Drawing.Size(353, 186);
             this.lstRcp.SmallImageList = this.imgLst;
             this.lstRcp.TabIndex = 0;
             this.lstRcp.UseCompatibleStateImageBehavior = false;
@@ -464,6 +513,7 @@
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(69, 24);
             this.lblName.TabIndex = 49;
+            this.lblName.Tag = "-";
             this.lblName.Text = "Name";
             // 
             // lblNo
@@ -483,7 +533,6 @@
             this.btnImg.Size = new System.Drawing.Size(218, 300);
             this.btnImg.TabIndex = 3;
             this.btnImg.UseVisualStyleBackColor = true;
-            this.btnImg.Click += new System.EventHandler(this.btnImg_Click);
             // 
             // Form1
             // 
@@ -559,6 +608,9 @@
         private System.Windows.Forms.Label lblFirpower;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblNo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

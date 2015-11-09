@@ -32,16 +32,10 @@ namespace Kancolle_Guide
 
         }
 
-        public string HPinit
+        public string HP
         {
-            get { return txtHPInit.Text; }
-            set { txtHPInit.Text = value; }
-        }
-
-        public string HPMax
-        {
-            get { return txtHPMax.Text; }
-            set { txtHPMax.Text = value; }
+            get { return txtHP.Text; }
+            set { txtHP.Text = value; }
         }
 
         public string ARMORinit

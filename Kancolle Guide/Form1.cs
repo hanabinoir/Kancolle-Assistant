@@ -14,9 +14,12 @@ namespace Kancolle_Guide
     public partial class Form1 : Form
     {
         private string init = "", max = "";
-        private string No, HP, Firepower, Armor, Torpedo, 
-            Evasion, AA, Aircraft, ASW, Speed, LOS, Range, Luck;
+        private string No = "", HP = "", Firepower = "", Armor = "", 
+            Torpedo = "", Evasion = "", AA = "", Aircraft = "", 
+            ASW = "", Speed = "", LOS = "", Range = "", Luck = "";
         private MySqlConnection conn;
+        private MySqlCommand cmd;
+        private MySqlDataReader reader;
 
         public Form1()
         {
@@ -48,91 +51,59 @@ namespace Kancolle_Guide
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void loadType()
         {
-            lstRcp.View = View.Details;
-            lstRcp.GridLines = true;
-            lstRcp.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            lstRcp.Columns[0].ImageIndex = 0;
-            lstRcp.Columns[1].ImageIndex = 1;
-            lstRcp.Columns[2].ImageIndex = 2;
-            lstRcp.Columns[3].ImageIndex = 3;
-
-            connection();
-
-            string findType = "select Ship_Type from Ships " + 
-                "group by Ship_Type " + 
-                "order by Ship_Type";
-
-            string findClass = "select Class from Ships " + 
-                "where Ship_Type = 'Battleship' " +
-                "group by Class " + 
+            string findClass = "select Ship_Type from Ships " + 
+                "group by Ship_Type " +
                 "order by Ship_No";
 
+            dgvType.Rows.Clear();
+            cmd = new MySqlCommand(findClass, conn);
+            reader = cmd.ExecuteReader();
+            dgvType.ColumnCount = 1;
+            dgvType.Columns[0].Name = "Type";
+            while (reader.Read())
+                dgvType.Rows.Add(reader.GetString(0));
+            reader.Close();
+        }
+
+        private void loadClass(string type)
+        {
+            string findClass = "select Class from Ships " +
+                "where Ship_Type = '" + type + "' " +
+                "group by Class " +
+                "order by Ship_No";
+
+            dgvClass.Rows.Clear();
+            cmd = new MySqlCommand(findClass, conn);
+            reader = cmd.ExecuteReader();
+            dgvClass.ColumnCount = 1;
+            dgvClass.Columns[0].Name = "Class";
+            while (reader.Read())
+                dgvClass.Rows.Add(reader.GetString(0));
+            reader.Close();
+        }
+
+        private void loadShip(string Class)
+        {
             string findShip = "select Ship_Name from Ships " +
-                "where Class = 'Nagato'";
+                "where Class = '" + Class + "'" + 
+                "order by Ship_No";
 
-            if (conn != null)
-            {
-                MySqlCommand cmd;
-                MySqlDataReader reader;
-
-                cmd = new MySqlCommand(findType, conn);
-                reader = cmd.ExecuteReader();
-                dgvType.ColumnCount = 1;
-                dgvType.Columns[0].Name = "Type";
-                while(reader.Read())
-                    dgvType.Rows.Add(reader.GetString(0));
-                reader.Close();
-
-                cmd = new MySqlCommand(findClass, conn);
-                reader = cmd.ExecuteReader();
-                dgvClass.ColumnCount = 1;
-                dgvClass.Columns[0].Name = "Class";
-                while (reader.Read())
-                    dgvClass.Rows.Add(reader.GetString(0));
-                reader.Close();
-
-                cmd = new MySqlCommand(findShip, conn);
-                reader = cmd.ExecuteReader();
-                dgvShip.ColumnCount = 1;
-                dgvShip.Columns[0].Name = "Ship";
-                while (reader.Read())
-                {
-                    dgvShip.Rows.Add(reader.GetString(0));
-                    lblName.Text = reader.GetString(0);
-                }
-                    
-                reader.Close();
-            }
-            else
-                MessageBox.Show("Try to connect.");
-
-            defStats("Nagato");
-            lblHP.Text = HP;
-            lblFirpower.Text = Firepower;
-            lblArmor.Text = Armor;
-            lblTorpedo.Text = Torpedo;
-            lblEvasion.Text = Evasion;
-            lblAA.Text = AA;
-            lblAircraft.Text = Aircraft;
-            lblASW.Text = ASW;
-            lblSpeed.Text = Speed;
-            lblLOS.Text = LOS;
-            lblRange.Text = Range;
-            lblLuck.Text = Luck;
-            lblNo.Text = "No. " + No;
-
-            Bitmap img = (Bitmap)Properties.Resources.ResourceManager.GetObject("_" + No);
-            btnImg.Image = img;
+            dgvShip.Rows.Clear();
+            cmd = new MySqlCommand(findShip, conn);
+            reader = cmd.ExecuteReader();
+            dgvShip.ColumnCount = 1;
+            dgvShip.Columns[0].Name = "Ship";
+            while (reader.Read())
+                dgvShip.Rows.Add(reader.GetString(0));
+            reader.Close();
         }
 
         private void defStats(string ship)
         {
-            string findStats = "select * from Ships " + 
+            string findStats = "select * from Ships " +
                 "where Ship_Name = '" + ship + "';";
-            MySqlCommand cmd;
-            MySqlDataReader reader;
 
             cmd = new MySqlCommand(findStats, conn);
             reader = cmd.ExecuteReader();
@@ -152,6 +123,59 @@ namespace Kancolle_Guide
                 Range = reader.GetString(14);
                 Luck = reader.GetString(15);
             }
+            reader.Close();
+        }
+
+        private void loadStats(string ship)
+        {
+            lblHP.Text = HP;
+            lblFirpower.Text = Firepower;
+            lblArmor.Text = Armor;
+            lblTorpedo.Text = Torpedo;
+            lblEvasion.Text = Evasion;
+            lblAA.Text = AA;
+            lblAircraft.Text = Aircraft;
+            lblASW.Text = ASW;
+            lblSpeed.Text = Speed;
+            lblLOS.Text = LOS;
+            lblRange.Text = Range;
+            lblLuck.Text = Luck;
+            lblNo.Text = "No. " + No;
+            lblName.Text = ship;
+            Bitmap img = (Bitmap)Properties.Resources.ResourceManager.GetObject("_" + No);
+            btnImg.Image = img;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lstRcp.View = View.Details;
+            lstRcp.GridLines = true;
+            lstRcp.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            lstRcp.Columns[0].ImageIndex = 0;
+            lstRcp.Columns[1].ImageIndex = 1;
+            lstRcp.Columns[2].ImageIndex = 2;
+            lstRcp.Columns[3].ImageIndex = 3;
+
+            string[] row1 = { "1", "2", "3", "4"};
+            string[] row2 = { "5", "6", "7", "8" };
+            ListViewItem item1 = new ListViewItem(row1);
+            ListViewItem item2 = new ListViewItem(row2);
+            lstRcp.Items.Add(item1);
+            lstRcp.Items.Add(item2);
+
+            connection();
+
+            if (conn != null)
+            {
+                loadType();
+                loadClass("Battleship");
+                loadShip("Nagato");
+            }
+            else
+                MessageBox.Show("Try to connect.");
+
+            defStats("Nagato");
+            loadStats("Nagato");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -164,8 +188,7 @@ namespace Kancolle_Guide
             editStats.Show();
 
             assignVal(stats.HP);
-            editStats.HPinit = init;
-            editStats.HPMax = max;
+            editStats.HP = init;
 
             assignVal(stats.ARMOR);
             editStats.ARMORinit = init;
@@ -181,20 +204,36 @@ namespace Kancolle_Guide
                 max = s.Substring(idxOpen + 1, idxClosing - idxOpen - 1);
             }
             else
-            {
                 init = s;
-                max = "-";
-            }
-        }
-
-        private void btnImg_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(@"Kancolle Voices\Nagato-Introduction.ogg");
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             conn.Close();
+        }
+
+        private void dgvType_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string type = dgvType.SelectedCells[0].Value.ToString();
+            loadClass(type);
+            string Class = dgvClass.SelectedCells[0].Value.ToString();
+            loadShip(Class);
+            string ship = dgvShip.SelectedCells[0].Value.ToString();
+            defStats(ship);
+            loadStats(ship);
+        }
+
+        private void dgvClass_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string Class = dgvClass.SelectedCells[0].Value.ToString();
+            loadShip(Class);
+        }
+
+        private void dgvShip_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string ship = dgvShip.SelectedCells[0].Value.ToString();
+            defStats(ship);
+            loadStats(ship);
         }
     }
 }
