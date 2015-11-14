@@ -55,19 +55,13 @@
             this.lblLuck = new System.Windows.Forms.Label();
             this.lblLOS = new System.Windows.Forms.Label();
             this.lblASW = new System.Windows.Forms.Label();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.lblAA = new System.Windows.Forms.Label();
             this.lblTorpedo = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.lblHP = new System.Windows.Forms.Label();
             this.lblArmor = new System.Windows.Forms.Label();
             this.lblEvasion = new System.Windows.Forms.Label();
             this.lblFirpower = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.lstRcp = new System.Windows.Forms.ListView();
             this.colFuel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colAmn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -77,6 +71,12 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblNo = new System.Windows.Forms.Label();
             this.btnImg = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShip)).BeginInit();
@@ -341,25 +341,6 @@
             this.lblASW.TabIndex = 42;
             this.lblASW.Text = "-";
             // 
-            // btnDel
-            // 
-            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
-            this.btnDel.Location = new System.Drawing.Point(367, 36);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(24, 24);
-            this.btnDel.TabIndex = 34;
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(367, 6);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(24, 24);
-            this.btnAdd.TabIndex = 33;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
             // lblAA
             // 
             this.lblAA.AutoSize = true;
@@ -377,16 +358,6 @@
             this.lblTorpedo.Size = new System.Drawing.Size(10, 13);
             this.lblTorpedo.TabIndex = 40;
             this.lblTorpedo.Text = "-";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::Kancolle_Guide.Properties.Resources.edit;
-            this.btnEdit.Location = new System.Drawing.Point(367, 166);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(24, 24);
-            this.btnEdit.TabIndex = 35;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblHP
             // 
@@ -437,34 +408,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Recipe";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(367, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 24);
-            this.button1.TabIndex = 37;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(367, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(24, 24);
-            this.button2.TabIndex = 36;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.Image = global::Kancolle_Guide.Properties.Resources.edit;
-            this.button3.Location = new System.Drawing.Point(367, 168);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(24, 24);
-            this.button3.TabIndex = 38;
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // lstRcp
             // 
@@ -520,7 +463,7 @@
             // 
             this.lblNo.AutoSize = true;
             this.lblNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNo.Location = new System.Drawing.Point(551, 376);
+            this.lblNo.Location = new System.Drawing.Point(537, 379);
             this.lblNo.Name = "lblNo";
             this.lblNo.Size = new System.Drawing.Size(29, 16);
             this.lblNo.TabIndex = 50;
@@ -533,6 +476,63 @@
             this.btnImg.Size = new System.Drawing.Size(218, 300);
             this.btnImg.TabIndex = 3;
             this.btnImg.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
+            this.btnDel.Location = new System.Drawing.Point(367, 36);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(24, 24);
+            this.btnDel.TabIndex = 34;
+            this.btnDel.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(367, 6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(24, 24);
+            this.btnAdd.TabIndex = 33;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::Kancolle_Guide.Properties.Resources.edit;
+            this.btnEdit.Location = new System.Drawing.Point(367, 166);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(24, 24);
+            this.btnEdit.TabIndex = 35;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(367, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 24);
+            this.button1.TabIndex = 37;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(367, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(24, 24);
+            this.button2.TabIndex = 36;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.Image = global::Kancolle_Guide.Properties.Resources.edit;
+            this.button3.Location = new System.Drawing.Point(367, 168);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(24, 24);
+            this.button3.TabIndex = 38;
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

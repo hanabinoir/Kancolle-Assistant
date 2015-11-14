@@ -9,3 +9,12 @@ C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide
 C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Guide.Form2.resources
 C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Debug\MySql.Data.dll
 C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Guide.csprojResolveAssemblyReference.cache
+C:\Users\300208909\Downloads\Kancolle-Guide-master\Kancolle Guide\bin\Debug\Kancolle Guide.exe.config
+C:\Users\300208909\Downloads\Kancolle-Guide-master\Kancolle Guide\obj\Debug\Kancolle Guide.exe
+C:\Users\300208909\Downloads\Kancolle-Guide-master\Kancolle Guide\obj\Debug\Kancolle Guide.pdb
+C:\Users\300208909\Downloads\Kancolle-Guide-master\Kancolle Guide\bin\Debug\Kancolle Guide.exe
+C:\Users\300208909\Downloads\Kancolle-Guide-master\Kancolle Guide\bin\Debug\Kancolle Guide.pdb
+C:\Users\300208909\Downloads\Kancolle-Guide-master\Kancolle Guide\obj\Debug\Kancolle_Guide.Form1.resources
+C:\Users\300208909\Downloads\Kancolle-Guide-master\Kancolle Guide\obj\Debug\Kancolle_Guide.Form2.resources
+C:\Users\300208909\Downloads\Kancolle-Guide-master\Kancolle Guide\obj\Debug\Kancolle_Guide.Properties.Resources.resources
+C:\Users\300208909\Downloads\Kancolle-Guide-master\Kancolle Guide\obj\Debug\Kancolle Guide.csproj.GenerateResource.Cache

@@ -151,7 +151,7 @@
             // 
             this.txtRange.Location = new System.Drawing.Point(63, 164);
             this.txtRange.Name = "txtRange";
-            this.txtRange.Size = new System.Drawing.Size(22, 20);
+            this.txtRange.Size = new System.Drawing.Size(54, 20);
             this.txtRange.TabIndex = 58;
             // 
             // label15
@@ -194,7 +194,7 @@
             // 
             this.txtSpeed.Location = new System.Drawing.Point(63, 138);
             this.txtSpeed.Name = "txtSpeed";
-            this.txtSpeed.Size = new System.Drawing.Size(22, 20);
+            this.txtSpeed.Size = new System.Drawing.Size(54, 20);
             this.txtSpeed.TabIndex = 54;
             // 
             // label13
@@ -269,7 +269,6 @@
             // 
             // btnImg
             // 
-            this.btnImg.Image = global::Kancolle_Guide.Properties.Resources._001;
             this.btnImg.Location = new System.Drawing.Point(368, 12);
             this.btnImg.Name = "btnImg";
             this.btnImg.Size = new System.Drawing.Size(218, 300);
@@ -456,8 +455,7 @@
             this.Controls.Add(this.txtAircraft);
             this.Controls.Add(this.label10);
             this.Name = "Form2";
-            this.Text = "Stats: Nagato";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Text = "Edit";
             this.ResumeLayout(false);
             this.PerformLayout();
 

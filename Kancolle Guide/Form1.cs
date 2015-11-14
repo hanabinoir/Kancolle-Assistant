@@ -182,17 +182,67 @@ namespace Kancolle_Guide
         {
             Statistics stats = new Statistics();
             stats.HP = lblHP.Text;
+            stats.FIREPOWER = lblFirpower.Text;
             stats.ARMOR = lblArmor.Text;
+            stats.TORPEDO = lblTorpedo.Text;
+            stats.EVASION = lblEvasion.Text;
+            stats.AA = lblAA.Text;
+            stats.AIRCRAFT = lblAircraft.Text;
+            stats.ASW = lblASW.Text;
+            stats.SPEED = lblSpeed.Text;
+            stats.LOS = lblLOS.Text;
+            stats.RANGE = lblRange.Text;
+            stats.LUCK = lblLuck.Text;
+            stats.BUILDTIME = lblTime.Text;
+            stats.SHIP_NAME = lblName.Text;
+            stats.NUM = No;
 
             Form2 editStats = new Form2();
             editStats.Show();
 
-            assignVal(stats.HP);
-            editStats.HP = init;
+            Bitmap img = (Bitmap)Properties.Resources.ResourceManager.GetObject("_" + stats.NUM);
+            editStats.AddImg(img);
+
+            editStats.HP = stats.HP;
+            editStats.AIRCRAFT = stats.AIRCRAFT;
+            editStats.SPEED = stats.SPEED;
+            editStats.RANGE = stats.RANGE;
+            editStats.BUILDTIME = stats.BUILDTIME;
+
+            assignVal(stats.FIREPOWER);
+            editStats.FPinit = init;
+            editStats.FPmax = max;
 
             assignVal(stats.ARMOR);
             editStats.ARMORinit = init;
             editStats.ARMORmax = max;
+
+            assignVal(stats.TORPEDO);
+            editStats.TPDinit = init;
+            editStats.TPDmax = max;
+
+            assignVal(stats.EVASION);
+            editStats.EVASinit = init;
+            editStats.EVASmax = max;
+
+            assignVal(stats.AA);
+            editStats.AAinit = init;
+            editStats.AAmax = max;
+
+            assignVal(stats.ASW);
+            editStats.ASWinit = init;
+            editStats.ASWmax = max;
+
+            assignVal(stats.LOS);
+            editStats.LOSinit = init;
+            editStats.LOSmax = max;
+
+            assignVal(stats.LUCK);
+            editStats.LUCKinit = init;
+            editStats.LUCKmax = max;
+
+            editStats.SHIP_NAME = stats.SHIP_NAME;
+            editStats.NUM = stats.NUM;
         }
 
         private void assignVal(string s)
@@ -203,8 +253,6 @@ namespace Kancolle_Guide
                 init = s.Substring(0, idxOpen);
                 max = s.Substring(idxOpen + 1, idxClosing - idxOpen - 1);
             }
-            else
-                init = s;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
