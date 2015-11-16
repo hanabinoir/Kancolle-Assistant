@@ -456,6 +456,7 @@
             this.Controls.Add(this.label10);
             this.Name = "Form2";
             this.Text = "Edit";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

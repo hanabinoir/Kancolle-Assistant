@@ -12,7 +12,8 @@ namespace Kancolle_Guide
 {
     public partial class Form2 : Form
     {
-        private string num;
+        private string num, init = "", max = "";
+        //Statistics stats;
 
         public Form2()
         {
@@ -169,6 +170,28 @@ namespace Kancolle_Guide
         public void AddImg(Image img)
         {
             btnImg.Image = img;
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            /*stats = new Statistics();
+            txtHP.Text = stats.HP;
+
+            MessageBox.Show(txtHP.Text + " " + stats.FIREPOWER);
+
+            assignVal(stats.FIREPOWER);
+            txtFpInit.Text = init;
+            txtFpMax.Text = max;*/
+        }
+
+        private void assignVal(string s)
+        {
+            int idxOpen = s.IndexOf('('), idxClosing = s.IndexOf(')');
+            if (idxOpen > 0)
+            {
+                init = s.Substring(0, idxOpen);
+                max = s.Substring(idxOpen + 1, idxClosing - idxOpen - 1);
+            }
         }
     }
 }

@@ -53,9 +53,9 @@ namespace Kancolle_Guide
 
         private void loadType()
         {
-            string findClass = "select Ship_Type from Ships " + 
+            string findClass = "select Ship_Type from ShipInfo " + 
                 "group by Ship_Type " +
-                "order by Ship_No";
+                "order by Ship_Type";
 
             dgvType.Rows.Clear();
             cmd = new MySqlCommand(findClass, conn);
@@ -69,9 +69,9 @@ namespace Kancolle_Guide
 
         private void loadClass(string type)
         {
-            string findClass = "select Class from Ships " +
+            string findClass = "select Ship_Class from ShipInfo " +
                 "where Ship_Type = '" + type + "' " +
-                "group by Class " +
+                "group by Ship_Class " +
                 "order by Ship_No";
 
             dgvClass.Rows.Clear();
@@ -86,8 +86,8 @@ namespace Kancolle_Guide
 
         private void loadShip(string Class)
         {
-            string findShip = "select Ship_Name from Ships " +
-                "where Class = '" + Class + "'" + 
+            string findShip = "select Ship_Name from ShipInfo " +
+                "where Ship_Class = '" + Class + "'" + 
                 "order by Ship_No";
 
             dgvShip.Rows.Clear();
@@ -102,7 +102,7 @@ namespace Kancolle_Guide
 
         private void defStats(string ship)
         {
-            string findStats = "select * from Ships " +
+            string findStats = "select * from ShipStats " +
                 "where Ship_Name = '" + ship + "';";
 
             cmd = new MySqlCommand(findStats, conn);
@@ -110,18 +110,18 @@ namespace Kancolle_Guide
             while (reader.Read())
             {
                 No = reader.GetInt32(1).ToString("000");
-                HP = reader.GetString(4);
-                Firepower = reader.GetString(5);
-                Armor = reader.GetString(6);
-                Torpedo = reader.GetString(7);
-                Evasion = reader.GetString(8);
-                AA = reader.GetString(9);
-                Aircraft = reader.GetString(10);
-                ASW = reader.GetString(11);
-                Speed = reader.GetString(12);
-                LOS = reader.GetString(13);
-                Range = reader.GetString(14);
-                Luck = reader.GetString(15);
+                HP = reader.GetString(2);
+                Firepower = reader.GetString(3);
+                Armor = reader.GetString(4);
+                Torpedo = reader.GetString(5);
+                Evasion = reader.GetString(6);
+                AA = reader.GetString(7);
+                Aircraft = reader.GetString(8);
+                ASW = reader.GetString(9);
+                Speed = reader.GetString(10);
+                LOS = reader.GetString(11);
+                Range = reader.GetString(12);
+                Luck = reader.GetString(13);
             }
             reader.Close();
         }
@@ -275,6 +275,9 @@ namespace Kancolle_Guide
         {
             string Class = dgvClass.SelectedCells[0].Value.ToString();
             loadShip(Class);
+            string ship = dgvShip.SelectedCells[0].Value.ToString();
+            defStats(ship);
+            loadStats(ship);
         }
 
         private void dgvShip_CellClick(object sender, DataGridViewCellEventArgs e)
