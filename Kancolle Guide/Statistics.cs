@@ -10,7 +10,7 @@ namespace Kancolle_Guide
     {
         private string hp, firepower, armor, torpedo, evasion, aa, 
             aircraft, asw, speed, los, range, luck, 
-            No, shipname, buildtime;
+            No, shipname, buildtime, shipclass, shiptype;
         
         public string HP
         {
@@ -100,6 +100,18 @@ namespace Kancolle_Guide
         {
             set { shipname = value; }
             get { return shipname; }
+        }
+
+        public string SHIPCLASS
+        {
+            set { shipclass = value; }
+            get { return shipclass; }
+        }
+
+        public string SHIPTYPE
+        {
+            set { shiptype = value; }
+            get { return shiptype; }
         }
     }
 }

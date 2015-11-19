@@ -45,10 +45,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lblTime = new System.Windows.Forms.Label();
             this.lblRange = new System.Windows.Forms.Label();
             this.lblSpeed = new System.Windows.Forms.Label();
             this.lblAircraft = new System.Windows.Forms.Label();
@@ -220,15 +218,6 @@
             this.label15.TabIndex = 27;
             this.label15.Text = "Range";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(8, 172);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 13);
-            this.label17.TabIndex = 32;
-            this.label17.Text = "Build Time: ";
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -236,12 +225,11 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 191);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(405, 224);
+            this.tabControl1.Size = new System.Drawing.Size(405, 191);
             this.tabControl1.TabIndex = 36;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.lblTime);
             this.tabPage1.Controls.Add(this.lblRange);
             this.tabPage1.Controls.Add(this.lblSpeed);
             this.tabPage1.Controls.Add(this.lblAircraft);
@@ -259,7 +247,6 @@
             this.tabPage1.Controls.Add(this.lblFirpower);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label6);
@@ -273,19 +260,10 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(397, 198);
+            this.tabPage1.Size = new System.Drawing.Size(397, 165);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Statistics";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(76, 172);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(49, 13);
-            this.lblTime.TabIndex = 48;
-            this.lblTime.Text = "05:00:00";
             // 
             // lblRange
             // 
@@ -404,7 +382,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(397, 198);
+            this.tabPage2.Size = new System.Drawing.Size(397, 165);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Recipe";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -452,7 +430,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(536, 334);
+            this.lblName.Location = new System.Drawing.Point(536, 318);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(69, 24);
             this.lblName.TabIndex = 49;
@@ -463,7 +441,7 @@
             // 
             this.lblNo.AutoSize = true;
             this.lblNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNo.Location = new System.Drawing.Point(537, 379);
+            this.lblNo.Location = new System.Drawing.Point(537, 350);
             this.lblNo.Name = "lblNo";
             this.lblNo.Size = new System.Drawing.Size(29, 16);
             this.lblNo.TabIndex = 50;
@@ -485,6 +463,7 @@
             this.btnDel.Size = new System.Drawing.Size(24, 24);
             this.btnDel.TabIndex = 34;
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -495,11 +474,12 @@
             this.btnAdd.Size = new System.Drawing.Size(24, 24);
             this.btnAdd.TabIndex = 33;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.Image = global::Kancolle_Guide.Properties.Resources.edit;
-            this.btnEdit.Location = new System.Drawing.Point(367, 166);
+            this.btnEdit.Location = new System.Drawing.Point(367, 133);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(24, 24);
             this.btnEdit.TabIndex = 35;
@@ -580,7 +560,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnEdit;
@@ -593,7 +572,6 @@
         private System.Windows.Forms.ColumnHeader colSteel;
         private System.Windows.Forms.ColumnHeader colBxt;
         private System.Windows.Forms.ImageList imgLst;
-        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblRange;
         private System.Windows.Forms.Label lblSpeed;
         private System.Windows.Forms.Label lblAircraft;

@@ -13,13 +13,14 @@ namespace Kancolle_Guide
 {
     public partial class Form1 : Form
     {
-        private string init = "", max = "";
-        private string No = "", HP = "", Firepower = "", Armor = "", 
+        private string init = "", max = "", shiptype = "", shipclass = "";
+        private string ShipNo = "", HP = "", Firepower = "", Armor = "", 
             Torpedo = "", Evasion = "", AA = "", Aircraft = "", 
             ASW = "", Speed = "", LOS = "", Range = "", Luck = "";
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader reader;
+        Statistics stats;
 
         public Form1()
         {
@@ -42,7 +43,7 @@ namespace Kancolle_Guide
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.");
+                        MessageBox.Show("Can Not connect to server.");
                         break;
                     case 1:
                         MessageBox.Show("Invalid username/password, please try again");
@@ -74,6 +75,7 @@ namespace Kancolle_Guide
                 "group by Ship_Class " +
                 "order by Ship_No";
 
+            shiptype = type;
             dgvClass.Rows.Clear();
             cmd = new MySqlCommand(findClass, conn);
             reader = cmd.ExecuteReader();
@@ -90,6 +92,7 @@ namespace Kancolle_Guide
                 "where Ship_Class = '" + Class + "'" + 
                 "order by Ship_No";
 
+            shipclass = Class;
             dgvShip.Rows.Clear();
             cmd = new MySqlCommand(findShip, conn);
             reader = cmd.ExecuteReader();
@@ -100,7 +103,7 @@ namespace Kancolle_Guide
             reader.Close();
         }
 
-        private void defStats(string ship)
+        public void defStats(string ship)
         {
             string findStats = "select * from ShipStats " +
                 "where Ship_Name = '" + ship + "';";
@@ -109,7 +112,7 @@ namespace Kancolle_Guide
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                No = reader.GetInt32(1).ToString("000");
+                ShipNo = reader.GetInt32(1).ToString("000");
                 HP = reader.GetString(2);
                 Firepower = reader.GetString(3);
                 Armor = reader.GetString(4);
@@ -126,7 +129,7 @@ namespace Kancolle_Guide
             reader.Close();
         }
 
-        private void loadStats(string ship)
+        public void loadStats(string ship)
         {
             lblHP.Text = HP;
             lblFirpower.Text = Firepower;
@@ -140,9 +143,9 @@ namespace Kancolle_Guide
             lblLOS.Text = LOS;
             lblRange.Text = Range;
             lblLuck.Text = Luck;
-            lblNo.Text = "No. " + No;
+            lblNo.Text = "No. " + ShipNo;
             lblName.Text = ship;
-            Bitmap img = (Bitmap)Properties.Resources.ResourceManager.GetObject("_" + No);
+            Bitmap img = (Bitmap)Properties.Resources.ResourceManager.GetObject("_" + ShipNo);
             btnImg.Image = img;
         }
 
@@ -180,7 +183,7 @@ namespace Kancolle_Guide
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            Statistics stats = new Statistics();
+            stats = new Statistics();
             stats.HP = lblHP.Text;
             stats.FIREPOWER = lblFirpower.Text;
             stats.ARMOR = lblArmor.Text;
@@ -193,12 +196,15 @@ namespace Kancolle_Guide
             stats.LOS = lblLOS.Text;
             stats.RANGE = lblRange.Text;
             stats.LUCK = lblLuck.Text;
-            stats.BUILDTIME = lblTime.Text;
+            //stats.BUILDTIME = lblTime.Text;
             stats.SHIP_NAME = lblName.Text;
-            stats.NUM = No;
+            stats.NUM = ShipNo;
+            stats.SHIPTYPE = shiptype;
+            stats.SHIPCLASS = shipclass;
 
             Form2 editStats = new Form2();
             editStats.Show();
+            editStats.OP = "UPDATE";
 
             Bitmap img = (Bitmap)Properties.Resources.ResourceManager.GetObject("_" + stats.NUM);
             editStats.AddImg(img);
@@ -207,7 +213,7 @@ namespace Kancolle_Guide
             editStats.AIRCRAFT = stats.AIRCRAFT;
             editStats.SPEED = stats.SPEED;
             editStats.RANGE = stats.RANGE;
-            editStats.BUILDTIME = stats.BUILDTIME;
+            //editStats.BUILDTIME = stats.BUILDTIME;
 
             assignVal(stats.FIREPOWER);
             editStats.FPinit = init;
@@ -243,6 +249,8 @@ namespace Kancolle_Guide
 
             editStats.SHIP_NAME = stats.SHIP_NAME;
             editStats.NUM = stats.NUM;
+            editStats.SHIPCLASS = stats.SHIPCLASS;
+            editStats.SHIPTYPE = stats.SHIPTYPE;
         }
 
         private void assignVal(string s)
@@ -252,6 +260,11 @@ namespace Kancolle_Guide
             {
                 init = s.Substring(0, idxOpen);
                 max = s.Substring(idxOpen + 1, idxClosing - idxOpen - 1);
+            }
+            else
+            {
+                init = s;
+                max = "";
             }
         }
 
@@ -285,6 +298,33 @@ namespace Kancolle_Guide
             string ship = dgvShip.SelectedCells[0].Value.ToString();
             defStats(ship);
             loadStats(ship);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+            f2.OP = "ADD";
+            f2.AddBtnTxt = "Add\r\r Image\r\r (Feature in Construction)";
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            string delete = "DELETE FROM `ShipStats` WHERE `Ship_Name`=@shipname and`Ship_No`=@num;" + 
+                "DELETE FROM `ShipInfo` WHERE `Ship_Name`=@shipname and`Ship_No`=@num;";
+            cmd = new MySqlCommand(delete, conn);
+            cmd.Parameters.AddWithValue("@shipname", lblName.Text);
+            cmd.Parameters.AddWithValue("@num", int.Parse(ShipNo));
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record deleted");
+                this.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

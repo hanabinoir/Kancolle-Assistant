@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTime = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtHP = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtArmorInit = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -49,10 +47,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.btnChk = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnImg = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.txtArmorMax = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,14 +65,15 @@
             this.txtLOSInit = new System.Windows.Forms.TextBox();
             this.txtLuckMax = new System.Windows.Forms.TextBox();
             this.txtLuckInit = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnChk = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtNum = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtClass = new System.Windows.Forms.TextBox();
+            this.txtType = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // txtTime
-            // 
-            this.txtTime.Location = new System.Drawing.Point(80, 197);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(74, 20);
-            this.txtTime.TabIndex = 62;
             // 
             // label4
             // 
@@ -103,15 +99,6 @@
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 39;
             this.label5.Text = "Firepower";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 200);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 13);
-            this.label17.TabIndex = 61;
-            this.label17.Text = "Build Time: ";
             // 
             // label7
             // 
@@ -234,38 +221,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 226);
+            this.label1.Location = new System.Drawing.Point(12, 242);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 64;
-            this.label1.Text = "Ship name: ";
+            this.label1.Text = "Name: ";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(80, 223);
+            this.txtName.Location = new System.Drawing.Point(63, 239);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(74, 20);
             this.txtName.TabIndex = 65;
-            // 
-            // btnChk
-            // 
-            this.btnChk.Image = global::Kancolle_Guide.Properties.Resources.check;
-            this.btnChk.Location = new System.Drawing.Point(12, 288);
-            this.btnChk.Name = "btnChk";
-            this.btnChk.Size = new System.Drawing.Size(24, 24);
-            this.btnChk.TabIndex = 66;
-            this.btnChk.UseVisualStyleBackColor = true;
-            this.btnChk.Click += new System.EventHandler(this.btnChk_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Image = global::Kancolle_Guide.Properties.Resources.Update;
-            this.btnUpdate.Location = new System.Drawing.Point(42, 288);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(24, 24);
-            this.btnUpdate.TabIndex = 67;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnImg
             // 
@@ -274,15 +241,6 @@
             this.btnImg.Size = new System.Drawing.Size(218, 300);
             this.btnImg.TabIndex = 63;
             this.btnImg.UseVisualStyleBackColor = true;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Image = global::Kancolle_Guide.Properties.Resources.reset;
-            this.btnReset.Location = new System.Drawing.Point(72, 288);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(24, 24);
-            this.btnReset.TabIndex = 68;
-            this.btnReset.UseVisualStyleBackColor = true;
             // 
             // txtArmorMax
             // 
@@ -407,11 +365,85 @@
             this.txtLuckInit.Size = new System.Drawing.Size(22, 20);
             this.txtLuckInit.TabIndex = 85;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Image = global::Kancolle_Guide.Properties.Resources.Update;
+            this.btnUpdate.Location = new System.Drawing.Point(42, 288);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(24, 24);
+            this.btnUpdate.TabIndex = 67;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnChk
+            // 
+            this.btnChk.Image = global::Kancolle_Guide.Properties.Resources.check;
+            this.btnChk.Location = new System.Drawing.Point(12, 288);
+            this.btnChk.Name = "btnChk";
+            this.btnChk.Size = new System.Drawing.Size(24, 24);
+            this.btnChk.TabIndex = 66;
+            this.btnChk.UseVisualStyleBackColor = true;
+            this.btnChk.Click += new System.EventHandler(this.btnChk_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(12, 218);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(27, 13);
+            this.label16.TabIndex = 87;
+            this.label16.Text = "No: ";
+            // 
+            // txtNum
+            // 
+            this.txtNum.Location = new System.Drawing.Point(63, 215);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(22, 20);
+            this.txtNum.TabIndex = 88;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(158, 218);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(38, 13);
+            this.label17.TabIndex = 89;
+            this.label17.Text = "Class: ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(158, 242);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(37, 13);
+            this.label18.TabIndex = 90;
+            this.label18.Text = "Type: ";
+            // 
+            // txtClass
+            // 
+            this.txtClass.Location = new System.Drawing.Point(216, 215);
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Size = new System.Drawing.Size(74, 20);
+            this.txtClass.TabIndex = 91;
+            // 
+            // txtType
+            // 
+            this.txtType.Location = new System.Drawing.Point(216, 241);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(74, 20);
+            this.txtType.TabIndex = 92;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 328);
+            this.Controls.Add(this.txtType);
+            this.Controls.Add(this.txtClass);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.txtNum);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.txtLuckMax);
             this.Controls.Add(this.txtLuckInit);
             this.Controls.Add(this.txtLOSMax);
@@ -429,17 +461,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtArmorMax);
-            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnChk);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnImg);
-            this.Controls.Add(this.txtTime);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtHP);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtArmorInit);
             this.Controls.Add(this.label14);
@@ -464,11 +493,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtHP;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtArmorInit;
         private System.Windows.Forms.Label label14;
@@ -488,7 +515,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnChk;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtArmorMax;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -506,5 +532,11 @@
         private System.Windows.Forms.TextBox txtLOSInit;
         private System.Windows.Forms.TextBox txtLuckMax;
         private System.Windows.Forms.TextBox txtLuckInit;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtNum;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtClass;
+        private System.Windows.Forms.TextBox txtType;
     }
 }

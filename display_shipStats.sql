@@ -1,1 +1,1 @@
-select * from ShipStats order by Ship_No;
+select * from ShipStats order by Ship_No
