@@ -58,6 +58,7 @@ namespace Kancolle_Guide
                 "group by Ship_Type " +
                 "order by Ship_Type";
 
+            Form2 f2 = new Form2();
             dgvType.Rows.Clear();
             cmd = new MySqlCommand(findClass, conn);
             reader = cmd.ExecuteReader();
@@ -202,55 +203,55 @@ namespace Kancolle_Guide
             stats.SHIPTYPE = shiptype;
             stats.SHIPCLASS = shipclass;
 
-            Form2 editStats = new Form2();
-            editStats.Show();
-            editStats.OP = "UPDATE";
+            Form2 f2 = new Form2();
+            f2.Show();
+            f2.OP = "UPDATE";
 
             Bitmap img = (Bitmap)Properties.Resources.ResourceManager.GetObject("_" + stats.NUM);
-            editStats.AddImg(img);
+            f2.AddImg(img);
 
-            editStats.HP = stats.HP;
-            editStats.AIRCRAFT = stats.AIRCRAFT;
-            editStats.SPEED = stats.SPEED;
-            editStats.RANGE = stats.RANGE;
-            //editStats.BUILDTIME = stats.BUILDTIME;
+            f2.HP = stats.HP;
+            f2.AIRCRAFT = stats.AIRCRAFT;
+            f2.SPEED = stats.SPEED;
+            f2.RANGE = stats.RANGE;
+            //f2.BUILDTIME = stats.BUILDTIME;
 
             assignVal(stats.FIREPOWER);
-            editStats.FPinit = init;
-            editStats.FPmax = max;
+            f2.FPinit = init;
+            f2.FPmax = max;
 
             assignVal(stats.ARMOR);
-            editStats.ARMORinit = init;
-            editStats.ARMORmax = max;
+            f2.ARMORinit = init;
+            f2.ARMORmax = max;
 
             assignVal(stats.TORPEDO);
-            editStats.TPDinit = init;
-            editStats.TPDmax = max;
+            f2.TPDinit = init;
+            f2.TPDmax = max;
 
             assignVal(stats.EVASION);
-            editStats.EVASinit = init;
-            editStats.EVASmax = max;
+            f2.EVASinit = init;
+            f2.EVASmax = max;
 
             assignVal(stats.AA);
-            editStats.AAinit = init;
-            editStats.AAmax = max;
+            f2.AAinit = init;
+            f2.AAmax = max;
 
             assignVal(stats.ASW);
-            editStats.ASWinit = init;
-            editStats.ASWmax = max;
+            f2.ASWinit = init;
+            f2.ASWmax = max;
 
             assignVal(stats.LOS);
-            editStats.LOSinit = init;
-            editStats.LOSmax = max;
+            f2.LOSinit = init;
+            f2.LOSmax = max;
 
             assignVal(stats.LUCK);
-            editStats.LUCKinit = init;
-            editStats.LUCKmax = max;
+            f2.LUCKinit = init;
+            f2.LUCKmax = max;
 
-            editStats.SHIP_NAME = stats.SHIP_NAME;
-            editStats.NUM = stats.NUM;
-            editStats.SHIPCLASS = stats.SHIPCLASS;
-            editStats.SHIPTYPE = stats.SHIPTYPE;
+            f2.SHIP_NAME = stats.SHIP_NAME;
+            f2.NUM = stats.NUM;
+            f2.SHIPCLASS = stats.SHIPCLASS;
+            f2.SHIPTYPE = stats.SHIPTYPE;
         }
 
         private void assignVal(string s)

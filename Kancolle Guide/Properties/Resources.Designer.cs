@@ -143,6 +143,16 @@ namespace Kancolle_Guide.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _009 {
+            get {
+                object obj = ResourceManager.GetObject("_009", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _010 {
             get {
                 object obj = ResourceManager.GetObject("_010", resourceCulture);
@@ -156,6 +166,26 @@ namespace Kancolle_Guide.Properties {
         internal static System.Drawing.Bitmap _011 {
             get {
                 object obj = ResourceManager.GetObject("_011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _017 {
+            get {
+                object obj = ResourceManager.GetObject("_017", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _018 {
+            get {
+                object obj = ResourceManager.GetObject("_018", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,6 +313,16 @@ namespace Kancolle_Guide.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _053 {
+            get {
+                object obj = ResourceManager.GetObject("_053", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _054 {
             get {
                 object obj = ResourceManager.GetObject("_054", resourceCulture);
@@ -376,6 +416,16 @@ namespace Kancolle_Guide.Properties {
         internal static System.Drawing.Bitmap _073 {
             get {
                 object obj = ResourceManager.GetObject("_073", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _111 {
+            get {
+                object obj = ResourceManager.GetObject("_111", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

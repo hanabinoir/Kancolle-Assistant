@@ -35,12 +35,10 @@
             this.txtArmorInit = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtRange = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtSpeed = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtAircraft = new System.Windows.Forms.TextBox();
@@ -65,14 +63,16 @@
             this.txtLOSInit = new System.Windows.Forms.TextBox();
             this.txtLuckMax = new System.Windows.Forms.TextBox();
             this.txtLuckInit = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnChk = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtClass = new System.Windows.Forms.TextBox();
-            this.txtType = new System.Windows.Forms.TextBox();
+            this.cboSpeed = new System.Windows.Forms.ComboBox();
+            this.cboRange = new System.Windows.Forms.ComboBox();
+            this.cboType = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnChk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -134,13 +134,6 @@
             this.label6.TabIndex = 43;
             this.label6.Text = "Torpedo";
             // 
-            // txtRange
-            // 
-            this.txtRange.Location = new System.Drawing.Point(63, 164);
-            this.txtRange.Name = "txtRange";
-            this.txtRange.Size = new System.Drawing.Size(54, 20);
-            this.txtRange.TabIndex = 58;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -176,13 +169,6 @@
             this.label8.Size = new System.Drawing.Size(21, 13);
             this.label8.TabIndex = 47;
             this.label8.Text = "AA";
-            // 
-            // txtSpeed
-            // 
-            this.txtSpeed.Location = new System.Drawing.Point(63, 138);
-            this.txtSpeed.Name = "txtSpeed";
-            this.txtSpeed.Size = new System.Drawing.Size(54, 20);
-            this.txtSpeed.TabIndex = 54;
             // 
             // label13
             // 
@@ -365,26 +351,6 @@
             this.txtLuckInit.Size = new System.Drawing.Size(22, 20);
             this.txtLuckInit.TabIndex = 85;
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Image = global::Kancolle_Guide.Properties.Resources.Update;
-            this.btnUpdate.Location = new System.Drawing.Point(42, 288);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(24, 24);
-            this.btnUpdate.TabIndex = 67;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnChk
-            // 
-            this.btnChk.Image = global::Kancolle_Guide.Properties.Resources.check;
-            this.btnChk.Location = new System.Drawing.Point(12, 288);
-            this.btnChk.Name = "btnChk";
-            this.btnChk.Size = new System.Drawing.Size(24, 24);
-            this.btnChk.TabIndex = 66;
-            this.btnChk.UseVisualStyleBackColor = true;
-            this.btnChk.Click += new System.EventHandler(this.btnChk_Click);
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -426,19 +392,72 @@
             this.txtClass.Size = new System.Drawing.Size(74, 20);
             this.txtClass.TabIndex = 91;
             // 
-            // txtType
+            // cboSpeed
             // 
-            this.txtType.Location = new System.Drawing.Point(216, 241);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(74, 20);
-            this.txtType.TabIndex = 92;
+            this.cboSpeed.FormattingEnabled = true;
+            this.cboSpeed.Items.AddRange(new object[] {
+            "Fast",
+            "Slow"});
+            this.cboSpeed.Location = new System.Drawing.Point(63, 138);
+            this.cboSpeed.Name = "cboSpeed";
+            this.cboSpeed.Size = new System.Drawing.Size(54, 21);
+            this.cboSpeed.TabIndex = 92;
+            // 
+            // cboRange
+            // 
+            this.cboRange.FormattingEnabled = true;
+            this.cboRange.Items.AddRange(new object[] {
+            "Long",
+            "Medium",
+            "Short",
+            "Very Long"});
+            this.cboRange.Location = new System.Drawing.Point(63, 165);
+            this.cboRange.Name = "cboRange";
+            this.cboRange.Size = new System.Drawing.Size(54, 21);
+            this.cboRange.TabIndex = 93;
+            // 
+            // cboType
+            // 
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Items.AddRange(new object[] {
+            "Battleship",
+            "Standard Carrier",
+            "Heavy Cruiser",
+            "Light Cruiser",
+            "Destroyer"});
+            this.cboType.Location = new System.Drawing.Point(216, 241);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(74, 21);
+            this.cboType.TabIndex = 94;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Image = global::Kancolle_Guide.Properties.Resources.Update;
+            this.btnUpdate.Location = new System.Drawing.Point(42, 288);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(24, 24);
+            this.btnUpdate.TabIndex = 67;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnChk
+            // 
+            this.btnChk.Image = global::Kancolle_Guide.Properties.Resources.check;
+            this.btnChk.Location = new System.Drawing.Point(12, 288);
+            this.btnChk.Name = "btnChk";
+            this.btnChk.Size = new System.Drawing.Size(24, 24);
+            this.btnChk.TabIndex = 66;
+            this.btnChk.UseVisualStyleBackColor = true;
+            this.btnChk.Click += new System.EventHandler(this.btnChk_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 328);
-            this.Controls.Add(this.txtType);
+            this.Controls.Add(this.cboType);
+            this.Controls.Add(this.cboRange);
+            this.Controls.Add(this.cboSpeed);
             this.Controls.Add(this.txtClass);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -473,12 +492,10 @@
             this.Controls.Add(this.txtArmorInit);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtRange);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtSpeed);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtAircraft);
@@ -500,12 +517,10 @@
         private System.Windows.Forms.TextBox txtArmorInit;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtRange;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSpeed;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtAircraft;
@@ -537,6 +552,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtClass;
-        private System.Windows.Forms.TextBox txtType;
+        private System.Windows.Forms.ComboBox cboSpeed;
+        private System.Windows.Forms.ComboBox cboRange;
+        private System.Windows.Forms.ComboBox cboType;
     }
 }

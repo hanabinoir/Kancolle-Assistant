@@ -72,9 +72,6 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShip)).BeginInit();
@@ -86,29 +83,32 @@
             // dgvType
             // 
             this.dgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvType.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvType.Location = new System.Drawing.Point(12, 12);
             this.dgvType.Name = "dgvType";
             this.dgvType.Size = new System.Drawing.Size(130, 150);
             this.dgvType.TabIndex = 0;
-            this.dgvType.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvType_CellClick);
+            this.dgvType.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvType_CellClick);
             // 
             // dgvClass
             // 
             this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClass.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvClass.Location = new System.Drawing.Point(151, 12);
             this.dgvClass.Name = "dgvClass";
             this.dgvClass.Size = new System.Drawing.Size(130, 150);
             this.dgvClass.TabIndex = 1;
-            this.dgvClass.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellClick);
+            this.dgvClass.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellClick);
             // 
             // dgvShip
             // 
             this.dgvShip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShip.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvShip.Location = new System.Drawing.Point(287, 12);
             this.dgvShip.Name = "dgvShip";
             this.dgvShip.Size = new System.Drawing.Size(130, 150);
             this.dgvShip.TabIndex = 2;
-            this.dgvShip.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShip_CellClick);
+            this.dgvShip.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShip_CellClick);
             // 
             // label4
             // 
@@ -375,9 +375,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.lstRcp);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -396,7 +393,7 @@
             this.colBxt});
             this.lstRcp.Location = new System.Drawing.Point(8, 6);
             this.lstRcp.Name = "lstRcp";
-            this.lstRcp.Size = new System.Drawing.Size(353, 186);
+            this.lstRcp.Size = new System.Drawing.Size(383, 153);
             this.lstRcp.SmallImageList = this.imgLst;
             this.lstRcp.TabIndex = 0;
             this.lstRcp.UseCompatibleStateImageBehavior = false;
@@ -486,39 +483,11 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(367, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 24);
-            this.button1.TabIndex = 37;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(367, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(24, 24);
-            this.button2.TabIndex = 36;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.Image = global::Kancolle_Guide.Properties.Resources.edit;
-            this.button3.Location = new System.Drawing.Point(367, 168);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(24, 24);
-            this.button3.TabIndex = 38;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 427);
+            this.ClientSize = new System.Drawing.Size(692, 389);
             this.Controls.Add(this.lblNo);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.tabControl1);
@@ -586,9 +555,6 @@
         private System.Windows.Forms.Label lblFirpower;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblNo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
     }
 }
 

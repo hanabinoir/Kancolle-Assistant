@@ -88,7 +88,10 @@ namespace Kancolle_Guide
             cmd.Parameters.AddWithValue("@hp", txtHP.Text);
             cmd.Parameters.AddWithValue("@fp", txtFpInit.Text + " (" + txtFpMax.Text + ")");
             cmd.Parameters.AddWithValue("@armor", txtArmorInit.Text + " (" + txtArmorMax.Text + ")");
-            cmd.Parameters.AddWithValue("@tpd", txtTpdInit.Text + " (" + txtTpdMax.Text + ")");
+            if(txtTpdMax.Text != "")
+                cmd.Parameters.AddWithValue("@tpd", txtTpdInit.Text);
+            else
+                cmd.Parameters.AddWithValue("@tpd", txtTpdInit.Text + " (" + txtTpdMax.Text + ")");
             cmd.Parameters.AddWithValue("@evas", txtEvsInit.Text + " (" + txtEvsMax.Text + ")");
             cmd.Parameters.AddWithValue("@aa", txtAAInit.Text + " (" + txtAAMax.Text + ")");
             cmd.Parameters.AddWithValue("@airc", txtAircraft.Text);
@@ -96,13 +99,13 @@ namespace Kancolle_Guide
                 cmd.Parameters.AddWithValue("@asw", txtASWInit.Text + " (" + txtASWMax.Text + ")");
             else
                 cmd.Parameters.AddWithValue("@asw", txtASWInit.Text);
-            cmd.Parameters.AddWithValue("@spd", txtSpeed.Text);
+            cmd.Parameters.AddWithValue("@spd", cboSpeed.SelectedItem.ToString());
             cmd.Parameters.AddWithValue("@los", txtLOSInit.Text + " (" + txtLOSMax.Text + ")");
-            cmd.Parameters.AddWithValue("@range", txtRange.Text);
+            cmd.Parameters.AddWithValue("@range", cboRange.SelectedItem.ToString());
             cmd.Parameters.AddWithValue("@luck", txtLuckInit.Text + " (" + txtLuckMax.Text + ")");
             cmd.Parameters.AddWithValue("@num", int.Parse(num));
             cmd.Parameters.AddWithValue("@shipclass", txtClass.Text);
-            cmd.Parameters.AddWithValue("@shiptype", txtType.Text);
+            cmd.Parameters.AddWithValue("@shiptype", cboType.SelectedItem.ToString());
 
             try
             {
@@ -137,12 +140,12 @@ namespace Kancolle_Guide
         public string ASWinit { set { txtASWInit.Text = value; } }
         public string ASWmax { set { txtASWMax.Text = value; } }
 
-        public string SPEED { set { txtSpeed.Text = value; } }
+        public string SPEED { set { cboSpeed.SelectedIndex = cboSpeed.Items.IndexOf(value); } }
 
         public string LOSinit { set { txtLOSInit.Text = value; } }
         public string LOSmax { set { txtLOSMax.Text = value; } }
 
-        public string RANGE { set { txtRange.Text = value; } }
+        public string RANGE { set { cboRange.SelectedIndex = cboRange.Items.IndexOf(value); } }
 
         public string LUCKinit { set { txtLuckInit.Text = value; } }
         public string LUCKmax { set { txtLuckMax.Text = value; } }
@@ -153,7 +156,7 @@ namespace Kancolle_Guide
 
         public string SHIPCLASS { set { txtClass.Text = value; } }
 
-        public string SHIPTYPE { set { txtType.Text = value; } }
+        public string SHIPTYPE { set { cboType.SelectedIndex = cboType.Items.IndexOf(value); } }
 
         public string NUM { set { txtNum.Text = value; num = value; } }
 
@@ -168,14 +171,6 @@ namespace Kancolle_Guide
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            /*stats = new Statistics();
-            txtHP.Text = stats.HP;
-
-            MessageBox.Show(txtHP.Text + " " + stats.FIREPOWER);
-
-            assignVal(stats.FIREPOWER);
-            txtFpInit.Text = init;
-            txtFpMax.Text = max;*/
             connection();
         }
 
