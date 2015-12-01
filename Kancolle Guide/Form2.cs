@@ -9,13 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kancolle_Guide
+namespace Kancolle_Assistant
 {
     public partial class Form2 : Form
     {
         private string num, shipname, init = "", max = "", op = "";
         private MySqlConnection conn;
-        private MySqlCommand cmd;
+        private MySqlCommand cmd1, cmd2;
 
         public Form2()
         {
@@ -50,66 +50,78 @@ namespace Kancolle_Guide
         private void btnChk_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
-            f1.Refresh();
+            if (op == "UPDATE")
+                f1.reloadShips();
+            else
+                f1.reloadTypes();
             conn.Close();
             this.Close();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string update = "update ShipStats set " + 
-                "Ship_Name = @shipname, HP = @hp, Firepower = @fp, " + 
-                "Armor = @armor, Torpedo = @tpd, Evasion = @evas, " + 
-                "AA = @aa, Aircraft = @airc, ASW = @asw, " + 
-                "Speed = @spd, LOS = @los, Ship_Range = @range, Luck = @luck " +
-                "where Ship_Name = @shipname and Ship_No = @num;" +
-                "update ShipInfo set Ship_Name = @shipname, " + 
-                "Ship_Class = @shipclass, Ship_Type = @shiptype " +
-                "where Ship_Name = @shipname and Ship_No = @num;";
+            string updateStats = "UPDATE `f_user24`.`ShipStats` SET " +
+                "`Ship_Name`=@shipname, `Ship_No`=@num, `HP`=@hp, `Firepower`=@fp, " + 
+                "`Armor`=@armor, `Torpedo`=@tpd, `Evasion`=@evas, `AA`=@aa, `Aircraft`=@airc, " + 
+                "`ASW`=@asw, `Speed`=@spd, `LOS`=@los, `Ship_Range`=@range, `Luck`=@luck " + 
+                "WHERE `Ship_Name`=@shipname and `Ship_No`=@num;";
 
-            string insert = "INSERT INTO `ShipStats` " + 
-                "(`Ship_Name`, `Ship_No`, `HP`, `Firepower`, `Armor`, " + 
-                "`Torpedo`, `Evasion`, `AA`, `Aircraft`, `ASW`, " + 
+            string updateInfo = "UPDATE `f_user24`.`ShipInfo` SET " + 
+                "`Ship_Name`=@shipname, `Ship_No`=@num, `Ship_Class`=@shipclass, " + 
+                "`Ship_Type`=@shiptype WHERE `Ship_Name`=@shipname and `Ship_No`=@num;";
+
+            string insertStats = "INSERT INTO `ShipStats` " +
+                "(`Ship_Name`, `Ship_No`, `HP`, `Firepower`, `Armor`, " +
+                "`Torpedo`, `Evasion`, `AA`, `Aircraft`, `ASW`, " +
                 "`Speed`, `LOS`, `Ship_Range`, `Luck`) " +
                 "VALUES  (@shipname, @num, @hp, @fp, @armor, @tpd, " +
-                "@evas, @aa, @airc, @asw, @spd, @los, @range, @luck);" +
-                "INSERT INTO `ShipInfo` (`Ship_Name`, `Ship_No`, `Ship_Class`, `Ship_Type`) " +
-                "VALUES (@shipname, @num, @shipclass, @shiptype)";
+                "@evas, @aa, @airc, @asw, @spd, @los, @range, @luck);";
+            string insertInfo = "INSERT INTO `ShipInfo` " + 
+                "(`Ship_Name`, `Ship_No`, `Ship_Class`, `Ship_Type`) " +
+                "VALUES (@shipname, @num, @shipclass, @shiptype);";
 
             shipname = txtName.Text;
             num = txtNum.Text;
-
-            if(op == "UPDATE")
-                cmd = new MySqlCommand(update, conn);
+            if (op == "UPDATE")
+            {
+                cmd1 = new MySqlCommand(updateStats, conn);
+                cmd2 = new MySqlCommand(updateInfo, conn);
+            }
             else
-                cmd = new MySqlCommand(insert, conn);
+            {
+                cmd1 = new MySqlCommand(insertStats, conn);
+                cmd2 = new MySqlCommand(insertInfo, conn);
+            }
 
-            cmd.Parameters.AddWithValue("@shipname", shipname);
-            cmd.Parameters.AddWithValue("@hp", txtHP.Text);
-            cmd.Parameters.AddWithValue("@fp", txtFpInit.Text + " (" + txtFpMax.Text + ")");
-            cmd.Parameters.AddWithValue("@armor", txtArmorInit.Text + " (" + txtArmorMax.Text + ")");
+            cmd1.Parameters.AddWithValue("@shipname", shipname);
+            cmd2.Parameters.AddWithValue("@shipname", shipname);
+            cmd1.Parameters.AddWithValue("@hp", txtHP.Text);
+            cmd1.Parameters.AddWithValue("@fp", txtFpInit.Text + "(" + txtFpMax.Text + ")");
+            cmd1.Parameters.AddWithValue("@armor", txtArmorInit.Text + "(" + txtArmorMax.Text + ")");
             if(txtTpdMax.Text != "")
-                cmd.Parameters.AddWithValue("@tpd", txtTpdInit.Text);
+                cmd1.Parameters.AddWithValue("@tpd", txtTpdInit.Text);
             else
-                cmd.Parameters.AddWithValue("@tpd", txtTpdInit.Text + " (" + txtTpdMax.Text + ")");
-            cmd.Parameters.AddWithValue("@evas", txtEvsInit.Text + " (" + txtEvsMax.Text + ")");
-            cmd.Parameters.AddWithValue("@aa", txtAAInit.Text + " (" + txtAAMax.Text + ")");
-            cmd.Parameters.AddWithValue("@airc", txtAircraft.Text);
+                cmd1.Parameters.AddWithValue("@tpd", txtTpdInit.Text + "(" + txtTpdMax.Text + ")");
+            cmd1.Parameters.AddWithValue("@evas", txtEvsInit.Text + "(" + txtEvsMax.Text + ")");
+            cmd1.Parameters.AddWithValue("@aa", txtAAInit.Text + "(" + txtAAMax.Text + ")");
+            cmd1.Parameters.AddWithValue("@airc", txtAircraft.Text);
             if(txtASWMax.Text != "")
-                cmd.Parameters.AddWithValue("@asw", txtASWInit.Text + " (" + txtASWMax.Text + ")");
+                cmd1.Parameters.AddWithValue("@asw", txtASWInit.Text + "(" + txtASWMax.Text + ")");
             else
-                cmd.Parameters.AddWithValue("@asw", txtASWInit.Text);
-            cmd.Parameters.AddWithValue("@spd", cboSpeed.SelectedItem.ToString());
-            cmd.Parameters.AddWithValue("@los", txtLOSInit.Text + " (" + txtLOSMax.Text + ")");
-            cmd.Parameters.AddWithValue("@range", cboRange.SelectedItem.ToString());
-            cmd.Parameters.AddWithValue("@luck", txtLuckInit.Text + " (" + txtLuckMax.Text + ")");
-            cmd.Parameters.AddWithValue("@num", int.Parse(num));
-            cmd.Parameters.AddWithValue("@shipclass", txtClass.Text);
-            cmd.Parameters.AddWithValue("@shiptype", cboType.SelectedItem.ToString());
+                cmd1.Parameters.AddWithValue("@asw", txtASWInit.Text);
+            cmd1.Parameters.AddWithValue("@spd", SPEED);
+            cmd1.Parameters.AddWithValue("@los", txtLOSInit.Text + "(" + txtLOSMax.Text + ")");
+            cmd1.Parameters.AddWithValue("@range", RANGE);
+            cmd1.Parameters.AddWithValue("@luck", txtLuckInit.Text + "(" + txtLuckMax.Text + ")");
+            cmd1.Parameters.AddWithValue("@num", int.Parse(num));
+            cmd2.Parameters.AddWithValue("@num", int.Parse(num));
+            cmd2.Parameters.AddWithValue("@shipclass", txtClass.Text);
+            cmd2.Parameters.AddWithValue("@shiptype", SHIPTYPE);
 
             try
             {
-                cmd.ExecuteNonQuery();
+                cmd1.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
                 MessageBox.Show("Statistics updated");
             }
             catch (Exception ex)
@@ -140,12 +152,40 @@ namespace Kancolle_Guide
         public string ASWinit { set { txtASWInit.Text = value; } }
         public string ASWmax { set { txtASWMax.Text = value; } }
 
-        public string SPEED { set { cboSpeed.SelectedIndex = cboSpeed.Items.IndexOf(value); } }
+        public string SPEED
+        {
+            set
+            {
+                if (value != null)
+                    cboSpeed.SelectedIndex = cboSpeed.Items.IndexOf(value);
+            }
+            get
+            {
+                if (cboSpeed.SelectedItem != null)
+                    return cboSpeed.SelectedItem.ToString();
+                else
+                    return "";
+            }
+        }
 
         public string LOSinit { set { txtLOSInit.Text = value; } }
         public string LOSmax { set { txtLOSMax.Text = value; } }
 
-        public string RANGE { set { cboRange.SelectedIndex = cboRange.Items.IndexOf(value); } }
+        public string RANGE 
+        { 
+            set 
+            {
+                if (value != null)
+                    cboRange.SelectedIndex = cboRange.Items.IndexOf(value); 
+            }
+            get
+            {
+                if (cboRange.SelectedItem != null)
+                    return cboRange.SelectedItem.ToString();
+                else
+                    return "";
+            }
+        }
 
         public string LUCKinit { set { txtLuckInit.Text = value; } }
         public string LUCKmax { set { txtLuckMax.Text = value; } }
@@ -156,7 +196,21 @@ namespace Kancolle_Guide
 
         public string SHIPCLASS { set { txtClass.Text = value; } }
 
-        public string SHIPTYPE { set { cboType.SelectedIndex = cboType.Items.IndexOf(value); } }
+        public string SHIPTYPE 
+        {
+            set 
+            { 
+                if(value != null)
+                    cboType.SelectedIndex = cboType.Items.IndexOf(value);
+            }
+            get
+            {
+                if (cboType.SelectedItem != null)
+                    return cboType.SelectedItem.ToString();
+                else
+                    return "";
+            }
+        }
 
         public string NUM { set { txtNum.Text = value; num = value; } }
 

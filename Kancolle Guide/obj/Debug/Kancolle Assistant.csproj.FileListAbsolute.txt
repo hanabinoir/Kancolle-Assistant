@@ -1,0 +1,12 @@
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Debug\Kancolle Assistant.exe.config
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Debug\Kancolle Assistant.exe
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Debug\Kancolle Assistant.pdb
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Debug\MySql.Data.dll
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Assistant.csprojResolveAssemblyReference.cache
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.Form1.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.Form2.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.Form3.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.Properties.Resources.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Assistant.csproj.GenerateResource.Cache
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Assistant.exe
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Assistant.pdb

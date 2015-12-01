@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kancolle Guide", "Kancolle Guide\Kancolle Guide.csproj", "{30EAF750-38F6-4AEB-B963-D7E15BAFDB94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kancolle Assistant", "Kancolle Guide\Kancolle Assistant.csproj", "{30EAF750-38F6-4AEB-B963-D7E15BAFDB94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

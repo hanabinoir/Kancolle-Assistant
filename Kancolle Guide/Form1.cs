@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kancolle_Guide
+namespace Kancolle_Assistant
 {
     public partial class Form1 : Form
     {
@@ -17,6 +17,8 @@ namespace Kancolle_Guide
         private string ShipNo = "", HP = "", Firepower = "", Armor = "", 
             Torpedo = "", Evasion = "", AA = "", Aircraft = "", 
             ASW = "", Speed = "", LOS = "", Range = "", Luck = "";
+        private string[] rare = {"Shimakaze", "Yukikaze", "Suzuya", "Kumano", 
+                                "Mutsu", "Nagato"};
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader reader;
@@ -150,23 +152,52 @@ namespace Kancolle_Guide
             btnImg.Image = img;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void reloadTypes()
         {
-            lstRcp.View = View.Details;
-            lstRcp.GridLines = true;
-            lstRcp.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            dgvType.Rows.Clear();
+            dgvType.Refresh();
+        }
+
+        public void reloadShips()
+        {
+            dgvShip.Rows.Clear();
+            dgvShip.Refresh();
+        }
+
+        public void loadRecipe(string type, string ship)
+        {
+            string recipe = "";
+            if (rare.Contains(ship))
+                recipe = "select `Fuel`, `Ammunition`, `Steel`, `Bauxite` from Recipe " +
+                    "where `Ship_Type` = '" + type + "' and Rare = 1;";
+            else
+                recipe = "select `Fuel`, `Ammunition`, `Steel`, `Bauxite` from Recipe " +
+                    "where `Ship_Type` = '" + type + "';";
+
+            ListViewItem item;
+            cmd = new MySqlCommand(recipe, conn);
+            reader = cmd.ExecuteReader();
+            lstRcp.Items.Clear();
             lstRcp.Columns[0].ImageIndex = 0;
             lstRcp.Columns[1].ImageIndex = 1;
             lstRcp.Columns[2].ImageIndex = 2;
             lstRcp.Columns[3].ImageIndex = 3;
+            while (reader.Read())
+            {
+                item = new ListViewItem(new string[]{
+                    reader.GetString(0), 
+                    reader.GetString(1), 
+                    reader.GetString(2), 
+                    reader.GetString(3)
+                });
+                lstRcp.Items.Add(item);
+            }
+            reader.Close();
+        }
 
-            string[] row1 = { "1", "2", "3", "4"};
-            string[] row2 = { "5", "6", "7", "8" };
-            ListViewItem item1 = new ListViewItem(row1);
-            ListViewItem item2 = new ListViewItem(row2);
-            lstRcp.Items.Add(item1);
-            lstRcp.Items.Add(item2);
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lstRcp.View = View.Details;
             connection();
 
             if (conn != null)
@@ -180,6 +211,7 @@ namespace Kancolle_Guide
 
             defStats("Nagato");
             loadStats("Nagato");
+            loadRecipe("Battleship", "Nagato");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -283,22 +315,27 @@ namespace Kancolle_Guide
             string ship = dgvShip.SelectedCells[0].Value.ToString();
             defStats(ship);
             loadStats(ship);
+            loadRecipe(type, ship);
         }
 
         private void dgvClass_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            string type = dgvType.SelectedCells[0].Value.ToString();
             string Class = dgvClass.SelectedCells[0].Value.ToString();
             loadShip(Class);
             string ship = dgvShip.SelectedCells[0].Value.ToString();
             defStats(ship);
             loadStats(ship);
+            loadRecipe(type, ship);
         }
 
         private void dgvShip_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            string type = dgvType.SelectedCells[0].Value.ToString();
             string ship = dgvShip.SelectedCells[0].Value.ToString();
             defStats(ship);
             loadStats(ship);
+            loadRecipe(type, ship);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -311,21 +348,31 @@ namespace Kancolle_Guide
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            string delete = "DELETE FROM `ShipStats` WHERE `Ship_Name`=@shipname and`Ship_No`=@num;" + 
-                "DELETE FROM `ShipInfo` WHERE `Ship_Name`=@shipname and`Ship_No`=@num;";
-            cmd = new MySqlCommand(delete, conn);
-            cmd.Parameters.AddWithValue("@shipname", lblName.Text);
-            cmd.Parameters.AddWithValue("@num", int.Parse(ShipNo));
+            string delStat = "DELETE FROM `ShipStats` WHERE `Ship_Name`=@shipname and`Ship_No`=@num;";
+            string delInfo = "DELETE FROM `ShipInfo` WHERE `Ship_Name`=@shipname and`Ship_No`=@num;";
+            MySqlCommand cmd1 = new MySqlCommand(delStat, conn);
+            MySqlCommand cmd2 = new MySqlCommand(delInfo, conn);
+            cmd1.Parameters.AddWithValue("@shipname", lblName.Text);
+            cmd1.Parameters.AddWithValue("@num", int.Parse(ShipNo));
+            cmd2.Parameters.AddWithValue("@shipname", lblName.Text);
+            cmd2.Parameters.AddWithValue("@num", int.Parse(ShipNo));
             try
             {
-                cmd.ExecuteNonQuery();
+                cmd1.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
                 MessageBox.Show("Record deleted");
-                this.Refresh();
+                dgvShip.Rows.RemoveAt(dgvShip.CurrentCell.RowIndex);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void logInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
         }
     }
 }

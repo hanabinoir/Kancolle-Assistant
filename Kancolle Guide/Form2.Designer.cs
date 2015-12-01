@@ -1,4 +1,4 @@
-﻿namespace Kancolle_Guide
+﻿namespace Kancolle_Assistant
 {
     partial class Form2
     {
@@ -364,7 +364,7 @@
             // 
             this.txtNum.Location = new System.Drawing.Point(63, 215);
             this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(22, 20);
+            this.txtNum.Size = new System.Drawing.Size(45, 20);
             this.txtNum.TabIndex = 88;
             // 
             // label17
@@ -389,7 +389,7 @@
             // 
             this.txtClass.Location = new System.Drawing.Point(216, 215);
             this.txtClass.Name = "txtClass";
-            this.txtClass.Size = new System.Drawing.Size(74, 20);
+            this.txtClass.Size = new System.Drawing.Size(101, 20);
             this.txtClass.TabIndex = 91;
             // 
             // cboSpeed
@@ -427,12 +427,12 @@
             "Destroyer"});
             this.cboType.Location = new System.Drawing.Point(216, 241);
             this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(74, 21);
+            this.cboType.Size = new System.Drawing.Size(101, 21);
             this.cboType.TabIndex = 94;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Image = global::Kancolle_Guide.Properties.Resources.Update;
+            this.btnUpdate.Image = global::Kancolle_Assistant.Properties.Resources.Update;
             this.btnUpdate.Location = new System.Drawing.Point(42, 288);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(24, 24);
@@ -442,7 +442,7 @@
             // 
             // btnChk
             // 
-            this.btnChk.Image = global::Kancolle_Guide.Properties.Resources.check;
+            this.btnChk.Image = global::Kancolle_Assistant.Properties.Resources.check;
             this.btnChk.Location = new System.Drawing.Point(12, 288);
             this.btnChk.Name = "btnChk";
             this.btnChk.Size = new System.Drawing.Size(24, 24);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kancolle_Guide
+namespace Kancolle_Assistant
 {
     class Statistics
     {

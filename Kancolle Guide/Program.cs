@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kancolle_Guide
+namespace Kancolle_Assistant
 {
     static class Program
     {

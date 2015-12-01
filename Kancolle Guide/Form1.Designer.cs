@@ -1,4 +1,4 @@
-﻿namespace Kancolle_Guide
+﻿namespace Kancolle_Assistant
 {
     partial class Form1
     {
@@ -53,38 +53,43 @@
             this.lblLuck = new System.Windows.Forms.Label();
             this.lblLOS = new System.Windows.Forms.Label();
             this.lblASW = new System.Windows.Forms.Label();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.lblAA = new System.Windows.Forms.Label();
             this.lblTorpedo = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.lblHP = new System.Windows.Forms.Label();
             this.lblArmor = new System.Windows.Forms.Label();
             this.lblEvasion = new System.Windows.Forms.Label();
             this.lblFirpower = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lstRcp = new System.Windows.Forms.ListView();
-            this.colFuel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colAmn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSteel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colBxt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imgLst = new System.Windows.Forms.ImageList(this.components);
             this.lblName = new System.Windows.Forms.Label();
             this.lblNo = new System.Windows.Forms.Label();
             this.btnImg = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.lstRcp = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShip)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvType
             // 
             this.dgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvType.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvType.Location = new System.Drawing.Point(12, 12);
+            this.dgvType.Location = new System.Drawing.Point(12, 35);
             this.dgvType.Name = "dgvType";
             this.dgvType.Size = new System.Drawing.Size(130, 150);
             this.dgvType.TabIndex = 0;
@@ -94,7 +99,7 @@
             // 
             this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClass.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvClass.Location = new System.Drawing.Point(151, 12);
+            this.dgvClass.Location = new System.Drawing.Point(151, 35);
             this.dgvClass.Name = "dgvClass";
             this.dgvClass.Size = new System.Drawing.Size(130, 150);
             this.dgvClass.TabIndex = 1;
@@ -104,7 +109,7 @@
             // 
             this.dgvShip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShip.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvShip.Location = new System.Drawing.Point(287, 12);
+            this.dgvShip.Location = new System.Drawing.Point(287, 35);
             this.dgvShip.Name = "dgvShip";
             this.dgvShip.Size = new System.Drawing.Size(130, 150);
             this.dgvShip.TabIndex = 2;
@@ -319,6 +324,27 @@
             this.lblASW.TabIndex = 42;
             this.lblASW.Text = "-";
             // 
+            // btnDel
+            // 
+            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
+            this.btnDel.Location = new System.Drawing.Point(367, 36);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(24, 24);
+            this.btnDel.TabIndex = 34;
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(367, 6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(24, 24);
+            this.btnAdd.TabIndex = 33;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // lblAA
             // 
             this.lblAA.AutoSize = true;
@@ -336,6 +362,16 @@
             this.lblTorpedo.Size = new System.Drawing.Size(10, 13);
             this.lblTorpedo.TabIndex = 40;
             this.lblTorpedo.Text = "-";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::Kancolle_Assistant.Properties.Resources.edit;
+            this.btnEdit.Location = new System.Drawing.Point(367, 133);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(24, 24);
+            this.btnEdit.TabIndex = 35;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblHP
             // 
@@ -384,36 +420,6 @@
             this.tabPage2.Text = "Recipe";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // lstRcp
-            // 
-            this.lstRcp.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colFuel,
-            this.colAmn,
-            this.colSteel,
-            this.colBxt});
-            this.lstRcp.Location = new System.Drawing.Point(8, 6);
-            this.lstRcp.Name = "lstRcp";
-            this.lstRcp.Size = new System.Drawing.Size(383, 153);
-            this.lstRcp.SmallImageList = this.imgLst;
-            this.lstRcp.TabIndex = 0;
-            this.lstRcp.UseCompatibleStateImageBehavior = false;
-            // 
-            // colFuel
-            // 
-            this.colFuel.Text = "";
-            // 
-            // colAmn
-            // 
-            this.colAmn.Text = "";
-            // 
-            // colSteel
-            // 
-            this.colSteel.Text = "";
-            // 
-            // colBxt
-            // 
-            this.colBxt.Text = "";
-            // 
             // imgLst
             // 
             this.imgLst.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLst.ImageStream")));
@@ -452,36 +458,68 @@
             this.btnImg.TabIndex = 3;
             this.btnImg.UseVisualStyleBackColor = true;
             // 
-            // btnDel
+            // lstRcp
             // 
-            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
-            this.btnDel.Location = new System.Drawing.Point(367, 36);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(24, 24);
-            this.btnDel.TabIndex = 34;
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            this.lstRcp.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lstRcp.GridLines = true;
+            this.lstRcp.Location = new System.Drawing.Point(6, 6);
+            this.lstRcp.Name = "lstRcp";
+            this.lstRcp.Size = new System.Drawing.Size(385, 153);
+            this.lstRcp.SmallImageList = this.imgLst;
+            this.lstRcp.TabIndex = 0;
+            this.lstRcp.UseCompatibleStateImageBehavior = false;
             // 
-            // btnAdd
+            // columnHeader1
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(367, 6);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(24, 24);
-            this.btnAdd.TabIndex = 33;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.columnHeader1.Text = "";
             // 
-            // btnEdit
+            // columnHeader2
             // 
-            this.btnEdit.Image = global::Kancolle_Guide.Properties.Resources.edit;
-            this.btnEdit.Location = new System.Drawing.Point(367, 133);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(24, 24);
-            this.btnEdit.TabIndex = 35;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.columnHeader2.Text = "";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(692, 24);
+            this.menuStrip1.TabIndex = 51;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shopToolStripMenuItem,
+            this.logInToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // shopToolStripMenuItem
+            // 
+            this.shopToolStripMenuItem.Name = "shopToolStripMenuItem";
+            this.shopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.shopToolStripMenuItem.Text = "Shop";
+            // 
+            // logInToolStripMenuItem
+            // 
+            this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logInToolStripMenuItem.Text = "Log in";
+            this.logInToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -495,6 +533,8 @@
             this.Controls.Add(this.dgvShip);
             this.Controls.Add(this.dgvClass);
             this.Controls.Add(this.dgvType);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Kancolle Guide";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -506,6 +546,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,11 +577,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListView lstRcp;
-        private System.Windows.Forms.ColumnHeader colFuel;
-        private System.Windows.Forms.ColumnHeader colAmn;
-        private System.Windows.Forms.ColumnHeader colSteel;
-        private System.Windows.Forms.ColumnHeader colBxt;
         private System.Windows.Forms.ImageList imgLst;
         private System.Windows.Forms.Label lblRange;
         private System.Windows.Forms.Label lblSpeed;
@@ -555,6 +592,15 @@
         private System.Windows.Forms.Label lblFirpower;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblNo;
+        private System.Windows.Forms.ListView lstRcp;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logInToolStripMenuItem;
     }
 }
 
