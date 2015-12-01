@@ -1,6 +1,6 @@
 ﻿namespace Kancolle_Assistant
 {
-    partial class Form2
+    partial class frmEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -450,7 +450,7 @@
             this.btnChk.UseVisualStyleBackColor = true;
             this.btnChk.Click += new System.EventHandler(this.btnChk_Click);
             // 
-            // Form2
+            // frmEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -500,7 +500,7 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtAircraft);
             this.Controls.Add(this.label10);
-            this.Name = "Form2";
+            this.Name = "frmEdit";
             this.Text = "Edit";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

@@ -1,6 +1,6 @@
 ﻿namespace Kancolle_Assistant
 {
-    partial class Form1
+    partial class frmHome
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.dgvType = new System.Windows.Forms.DataGridView();
             this.dgvClass = new System.Windows.Forms.DataGridView();
             this.dgvShip = new System.Windows.Forms.DataGridView();
@@ -63,15 +63,15 @@
             this.lblEvasion = new System.Windows.Forms.Label();
             this.lblFirpower = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.imgLst = new System.Windows.Forms.ImageList(this.components);
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblNo = new System.Windows.Forms.Label();
-            this.btnImg = new System.Windows.Forms.Button();
             this.lstRcp = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imgLst = new System.Windows.Forms.ImageList(this.components);
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblNo = new System.Windows.Forms.Label();
+            this.btnImg = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -420,6 +420,37 @@
             this.tabPage2.Text = "Recipe";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // lstRcp
+            // 
+            this.lstRcp.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lstRcp.GridLines = true;
+            this.lstRcp.Location = new System.Drawing.Point(6, 6);
+            this.lstRcp.Name = "lstRcp";
+            this.lstRcp.Size = new System.Drawing.Size(385, 153);
+            this.lstRcp.SmallImageList = this.imgLst;
+            this.lstRcp.TabIndex = 0;
+            this.lstRcp.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "";
+            // 
             // imgLst
             // 
             this.imgLst.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLst.ImageStream")));
@@ -458,37 +489,6 @@
             this.btnImg.TabIndex = 3;
             this.btnImg.UseVisualStyleBackColor = true;
             // 
-            // lstRcp
-            // 
-            this.lstRcp.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lstRcp.GridLines = true;
-            this.lstRcp.Location = new System.Drawing.Point(6, 6);
-            this.lstRcp.Name = "lstRcp";
-            this.lstRcp.Size = new System.Drawing.Size(385, 153);
-            this.lstRcp.SmallImageList = this.imgLst;
-            this.lstRcp.TabIndex = 0;
-            this.lstRcp.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -511,17 +511,17 @@
             // shopToolStripMenuItem
             // 
             this.shopToolStripMenuItem.Name = "shopToolStripMenuItem";
-            this.shopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.shopToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.shopToolStripMenuItem.Text = "Shop";
             // 
             // logInToolStripMenuItem
             // 
             this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
-            this.logInToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.logInToolStripMenuItem.Text = "Log in";
             this.logInToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
             // 
-            // Form1
+            // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -535,7 +535,7 @@
             this.Controls.Add(this.dgvType);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "frmHome";
             this.Text = "Kancolle Guide";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);

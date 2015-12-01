@@ -1,6 +1,6 @@
 ﻿namespace Kancolle_Assistant
 {
-    partial class Form3
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPwd = new System.Windows.Forms.Label();
+            this.btnReg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -55,8 +56,11 @@
             // 
             // txtPwd
             // 
+            this.txtPwd.AcceptsReturn = true;
+            this.txtPwd.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPwd.Location = new System.Drawing.Point(77, 45);
             this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(100, 20);
             this.txtPwd.TabIndex = 3;
             this.txtPwd.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPwd_KeyUp);
@@ -72,7 +76,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(197, 12);
+            this.btnLogin.Location = new System.Drawing.Point(197, 6);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 36);
             this.btnLogin.TabIndex = 4;
@@ -96,11 +100,22 @@
             this.lblPwd.Size = new System.Drawing.Size(0, 13);
             this.lblPwd.TabIndex = 6;
             // 
-            // Form3
+            // btnReg
+            // 
+            this.btnReg.Location = new System.Drawing.Point(197, 56);
+            this.btnReg.Name = "btnReg";
+            this.btnReg.Size = new System.Drawing.Size(75, 36);
+            this.btnReg.TabIndex = 7;
+            this.btnReg.Text = "Register";
+            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
+            // 
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 104);
+            this.Controls.Add(this.btnReg);
             this.Controls.Add(this.lblPwd);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.btnLogin);
@@ -108,8 +123,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label1);
-            this.Name = "Form3";
+            this.Name = "frmLogin";
             this.Text = "Form3";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +140,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPwd;
+        private System.Windows.Forms.Button btnReg;
     }
 }

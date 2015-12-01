@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Kancolle_Assistant
 {
-    public partial class Form3 : Form
+    public partial class frmLogin : Form
     {
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader reader;
 
-        public Form3()
+        public frmLogin()
         {
             InitializeComponent();
             connection();
@@ -50,6 +50,9 @@ namespace Kancolle_Assistant
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            lblEmail.Text = "";
+            lblPwd.Text = "";
+
             string find = "SELECT Pwd FROM f_user24.KancolleCust " + 
                 "where Email = '" + txtEmail.Text + "';";
             cmd = new MySqlCommand(find, conn);
@@ -60,7 +63,12 @@ namespace Kancolle_Assistant
             else if (txtPwd.Text != reader.GetString(0))
                 lblPwd.Text = "Password incorrect";
             else
-                MessageBox.Show("Login successful");
+            {
+                frmAcct f5 = new frmAcct();
+                f5.EMAIL = txtEmail.Text;
+                f5.Show();
+                this.Close();
+            }
             reader.Close();
         }
 
@@ -68,6 +76,18 @@ namespace Kancolle_Assistant
         {
             if (e.KeyCode == Keys.Enter)
                 btnLogin_Click(sender, e);
+        }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            frmReg f4 = new frmReg();
+            f4.Show();
+            this.Close();
+        }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            conn.Close();
         }
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Kancolle_Assistant
 {
-    public partial class Form1 : Form
+    public partial class frmHome : Form
     {
         private string init = "", max = "", shiptype = "", shipclass = "";
         private string ShipNo = "", HP = "", Firepower = "", Armor = "", 
@@ -24,7 +24,7 @@ namespace Kancolle_Assistant
         private MySqlDataReader reader;
         Statistics stats;
 
-        public Form1()
+        public frmHome()
         {
             InitializeComponent();
         }
@@ -60,7 +60,7 @@ namespace Kancolle_Assistant
                 "group by Ship_Type " +
                 "order by Ship_Type";
 
-            Form2 f2 = new Form2();
+            frmEdit f2 = new frmEdit();
             dgvType.Rows.Clear();
             cmd = new MySqlCommand(findClass, conn);
             reader = cmd.ExecuteReader();
@@ -235,7 +235,7 @@ namespace Kancolle_Assistant
             stats.SHIPTYPE = shiptype;
             stats.SHIPCLASS = shipclass;
 
-            Form2 f2 = new Form2();
+            frmEdit f2 = new frmEdit();
             f2.Show();
             f2.OP = "UPDATE";
 
@@ -340,7 +340,7 @@ namespace Kancolle_Assistant
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
+            frmEdit f2 = new frmEdit();
             f2.Show();
             f2.OP = "ADD";
             f2.AddBtnTxt = "Add\r\r Image\r\r (Feature in Construction)";
@@ -371,7 +371,8 @@ namespace Kancolle_Assistant
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
+            reader.Close();
+            frmLogin f3 = new frmLogin();
             f3.Show();
         }
     }

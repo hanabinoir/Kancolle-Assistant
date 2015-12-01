@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Kancolle_Assistant
 {
-    public partial class Form2 : Form
+    public partial class frmEdit : Form
     {
         private string num, shipname, init = "", max = "", op = "";
         private MySqlConnection conn;
         private MySqlCommand cmd1, cmd2;
 
-        public Form2()
+        public frmEdit()
         {
             InitializeComponent();
         }
@@ -49,7 +49,7 @@ namespace Kancolle_Assistant
 
         private void btnChk_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
+            frmHome f1 = new frmHome();
             if (op == "UPDATE")
                 f1.reloadShips();
             else
