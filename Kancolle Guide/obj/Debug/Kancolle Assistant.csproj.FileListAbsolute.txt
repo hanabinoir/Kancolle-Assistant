@@ -14,3 +14,4 @@ C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide
 C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmAcct.resources
 C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmCard.resources
 C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Assistant.csprojResolveAssemblyReference.cache
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmShop.resources

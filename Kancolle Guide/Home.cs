@@ -371,9 +371,14 @@ namespace Kancolle_Assistant
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            reader.Close();
             frmLogin f3 = new frmLogin();
             f3.Show();
+        }
+
+        private void shopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShop shop = new frmShop();
+            shop.Show();
         }
     }
 }

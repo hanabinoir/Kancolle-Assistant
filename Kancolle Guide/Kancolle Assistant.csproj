@@ -73,6 +73,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Reg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +97,12 @@
     </Compile>
     <Compile Include="PwdReset.Designer.cs">
       <DependentUpon>PwdReset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop.Designer.cs">
+      <DependentUpon>Shop.cs</DependentUpon>
     </Compile>
     <Compile Include="Statistics.cs" />
     <EmbeddedResource Include="Card.resx">
@@ -117,14 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="Shop.resx">
+      <DependentUpon>Shop.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -278,6 +287,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\009.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Ammo_shop.jpg" />
+    <None Include="Resources\Fuel_shop1.jpg" />
+    <Content Include="Resources\Bargain_sortie_set_shop.jpg" />
+    <Content Include="Resources\Bauxite_pack_shop.jpg" />
+    <Content Include="Resources\Bauxite_shop.jpg" />
+    <Content Include="Resources\Dev_material_shop.jpg" />
+    <Content Include="Resources\Dock_extension_set.jpg" />
+    <Content Include="Resources\Food_set.jpg" />
+    <Content Include="Resources\Fuel_pack_shop.jpg" />
+    <Content Include="Resources\Fuel_shop.jpg" />
+    <Content Include="Resources\Instant_construction_shop.jpg" />
+    <Content Include="Resources\Instant_repair_shop.jpg" />
+    <Content Include="Resources\Papers_and_ring.png" />
+    <Content Include="Resources\Port_extension_shop.jpg" />
+    <Content Include="Resources\Repair_goddess_shop.jpg" />
+    <Content Include="Resources\Repair_member_shop.jpg" />
+    <Content Include="Resources\Resource_Bundle.jpg" />
+    <Content Include="Resources\Resource_Bundle_2.jpg" />
+    <Content Include="Resources\Shop_Food_Pack_2.jpg" />
+    <Content Include="Resources\Shop_Improvement_Pack.jpg" />
+    <Content Include="Resources\Shop_Sortie_Morale_Booster.jpg" />
+    <Content Include="Resources\Shop_Sortie_Resupply.jpg" />
+    <Content Include="Resources\Shop_Support_Slot.jpg" />
+    <Content Include="Resources\Special_order_furniture_shop.jpg" />
+    <Content Include="Resources\Steel_shop.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

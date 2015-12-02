@@ -1,0 +1,28 @@
+Fuel_shop, "Gives 2 fuel", "1"
+Ammo_shop, "Gives 2 ammo", "1"
+Steel_shop, "Gives 150 steel", "1"
+Bauxite_shop, "Gives 1 bauxite", "1"
+
+Special_order_furniture_shop", "Gives 1 special order furniture", "3"
+Dev_material_shop", "Gives 7 development materials", "5"
+Instant_repair_shop", "Gives 5 instant repair buckets", "3"
+Instant_construction_shop", "Gives 5 instant construction", "3"
+
+Repair_member_shop, "Gives 1 Repair Team", "2"
+Repair_goddess_shop, "Gives 1 Repair Goddess", "5"
+Dock_extension_set, "Gives 1 key", "10"
+Resource_Bundle, "Gives 880 of each resource", "9"
+
+Port_extension_shop, "Increases your ship capacity by 10 and your equipment capacity by 40", "10"
+Papers_and_ring, "A set of marriage papers and ring that allows you to marry the ship of your choice", "7"
+Bargain_resources_set_shop, "Gives 15 steel, 2 ammo, 2 fuel, 2 bauxite and 2 development materials", "7"
+Food_set, "Gives 1 Food Supply Ship Mamiya (instant fatigue recovery for a whole fleet)", "3"
+Shop_Food_Pack_2, "Gives 5 Food Supply Ship Irako (instant fatigue recovery for a whole fleet)", "10"
+Shop_Sortie_Morale_Booster, "Gives 3 Morale Boost support items", "3"
+Fuel_pack_shop, "Gives 10 fuel", "3"
+Bauxite_pack_shop, "Gives 550 bauxite", "3"
+Bargain_sortie_set_shop, "Gives 5 fuel, 5 ammo, 2 steel and 2 instant repairs", "3"
+Shop_Improvement_Pack, "Gives 10 Improvement Materials", "7"
+Shop_Support_Slot, "Gives 1 Reinforcement Expansion item", "5"
+Shop_Sortie_Resupply, "Gives 2 Sortie Resupply Equipments", "3"
+
