@@ -64,6 +64,19 @@ namespace Kancolle_Assistant
                 lblPwd.Text = "Password incorrect";
             else
             {
+                /*switch (goToForm)
+                {
+                    case "Account":
+                        frmAcct f5 = new frmAcct();
+                        f5.EMAIL = txtEmail.Text;
+                        f5.Show();
+                        break;
+                    case "Shop":
+                        frmShop shop = new frmShop();
+                        shop.EMAIL = txtEmail.Text;
+                        shop.LOGIN = true;
+                        break;
+                }*/
                 frmAcct f5 = new frmAcct();
                 f5.EMAIL = txtEmail.Text;
                 f5.Show();

@@ -125,5 +125,27 @@ namespace Kancolle_Assistant
             reader.Close();
             conn.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmShop shop = new frmShop();
+            shop.EMAIL = txtEmail.Text;
+            shop.Show();
+            this.Close();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmOrdHist ord = new frmOrdHist();
+            ord.EMAIL = txtEmail.Text;
+            ord.Show();
+        }
     }
 }

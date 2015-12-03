@@ -74,7 +74,7 @@ namespace Kancolle_Assistant
             else if (txtPwd.Text != PWD)
                 lblPwd.Text = "Incorrect Password";
 
-            if(txtCardNo.Text != "" && txtPwd.Text != "")
+            if (txtCardNo.Text != "" && txtPwd.Text != "" && txtPwd.Text == PWD)
                 try
                 {
                     cmd.ExecuteNonQuery();

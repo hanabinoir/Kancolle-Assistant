@@ -69,7 +69,7 @@ namespace Kancolle_Assistant
             else if (txtPwdChk.Text != txtPwdNew.Text)
                 lblPwdChk.Text = "Password doesn't match";
 
-            if (txtPwd.Text != "" && txtPwdNew.Text != "" && txtPwdChk.Text != "")
+            if (txtPwd.Text != "" && txtPwdNew.Text != "" && txtPwdChk.Text == txtPwdNew.Text)
                 try
                 {
                     cmd.ExecuteNonQuery();

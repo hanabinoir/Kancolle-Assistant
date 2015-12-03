@@ -73,6 +73,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrdHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdHist.Designer.cs">
+      <DependentUpon>OrdHist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdHist.resx">
+      <DependentUpon>OrdHist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PwdReset.resx">
       <DependentUpon>PwdReset.cs</DependentUpon>
