@@ -99,9 +99,9 @@ namespace Kancolle_Assistant
             cmd1.Parameters.AddWithValue("@fp", txtFpInit.Text + "(" + txtFpMax.Text + ")");
             cmd1.Parameters.AddWithValue("@armor", txtArmorInit.Text + "(" + txtArmorMax.Text + ")");
             if(txtTpdMax.Text != "")
-                cmd1.Parameters.AddWithValue("@tpd", txtTpdInit.Text);
-            else
                 cmd1.Parameters.AddWithValue("@tpd", txtTpdInit.Text + "(" + txtTpdMax.Text + ")");
+            else
+                cmd1.Parameters.AddWithValue("@tpd", txtTpdInit.Text);
             cmd1.Parameters.AddWithValue("@evas", txtEvsInit.Text + "(" + txtEvsMax.Text + ")");
             cmd1.Parameters.AddWithValue("@aa", txtAAInit.Text + "(" + txtAAMax.Text + ")");
             cmd1.Parameters.AddWithValue("@airc", txtAircraft.Text);
@@ -213,6 +213,11 @@ namespace Kancolle_Assistant
         }
 
         public string NUM { set { txtNum.Text = value; num = value; } }
+
+        private void frmEdit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            conn.Close();
+        }
 
         public void AddImg(Image img)
         {

@@ -55,8 +55,7 @@ namespace Kancolle_Assistant
             string findCard = "SELECT `Card_Num` FROM f_user24.KancollePayment " + 
                 "where Email = '" + email + "';";
 
-            lstOrd.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-
+            lstOrd.Items.Clear();
             cmd = new MySqlCommand(findCard, conn);
             reader = cmd.ExecuteReader();
             if (!reader.HasRows)
@@ -68,21 +67,28 @@ namespace Kancolle_Assistant
 
             if (cardNum != "")
             {
-                string findTrans = "SELECT * FROM f_user24.KancolleTrans " + 
-                    "where Card_Num = '" + cardNum + "';";
+                string findTrans = "viewOrders";
                 cmd = new MySqlCommand(findTrans, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@card", cardNum);
+                cmd.Parameters["@card"].Direction = ParameterDirection.Input;
+
                 reader = cmd.ExecuteReader();
                 if (!reader.HasRows)
                     lstOrd.Items.Add("No order history");
                 else
                 {
+                    lstOrd.Columns.Add("No.");
+                    lstOrd.Columns.Add("Date");
+                    lstOrd.Columns.Add("Amount");
+                    lstOrd.Columns.Add("Card");
                     lstOrd.View = View.Details;
                     while (reader.Read())
                     {
                         lstOrd.Items.Add(new ListViewItem(new string[]{
                             reader.GetString(0), 
                             reader.GetString(1), 
-                            reader.GetString(2), 
+                            "$" + reader.GetString(2), 
                             reader.GetString(3)
                         }));
                     }

@@ -52,6 +52,9 @@ namespace Kancolle_Assistant
 
         private void frmShop_Load(object sender, EventArgs e)
         {
+            if(email != "")
+                btnLogin.Text = "Log out";
+
             string res = "SELECT * FROM f_user24.Resources;";
             string cons = "SELECT * FROM f_user24.Consumables;";
             string recmd = "SELECT * FROM f_user24.Recommended;";

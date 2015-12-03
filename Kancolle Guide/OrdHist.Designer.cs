@@ -29,40 +29,15 @@
         private void InitializeComponent()
         {
             this.lstOrd = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lstOrd
             // 
-            this.lstOrd.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
             this.lstOrd.Location = new System.Drawing.Point(12, 12);
             this.lstOrd.Name = "lstOrd";
             this.lstOrd.Size = new System.Drawing.Size(260, 237);
             this.lstOrd.TabIndex = 0;
             this.lstOrd.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "No.";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Date";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Amount";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Card";
             // 
             // frmOrdHist
             // 
@@ -81,9 +56,5 @@
         #endregion
 
         private System.Windows.Forms.ListView lstOrd;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
