@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Kancolle_Assistant
 {
@@ -22,6 +23,8 @@ namespace Kancolle_Assistant
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader reader;
+        private MySqlDataAdapter adapter;
+        private DataSet ds;
         Statistics stats;
 
         public frmHome()
@@ -31,11 +34,19 @@ namespace Kancolle_Assistant
 
         private void connection()
         {
-            string connStr = "SERVER=ec2-52-20-54-9.compute-1.amazonaws.com; " + 
-                "DATABASE=f_user24; " +
-                "UID=f_user24; " +
-                "PASSWORD=f_user24;";
+            XmlTextReader xml = new XmlTextReader("connection.xml");
+            string connStr = "";
+            string[] attrs = { "SERVER", "database", "uid", "password" };
+            string[] vals = new string[4];
+            for(int i = 0; i < vals.Length; i++)
+            {
+                xml.ReadToFollowing(attrs[i]);
+                xml.Read();
+                connStr += attrs[i] + "=" + xml.Value + "; ";
+            }
+            xml.Close();
             conn = new MySqlConnection(connStr);
+
             try
             {
                 conn.Open();
@@ -59,16 +70,14 @@ namespace Kancolle_Assistant
             string findClass = "select Ship_Type from ShipInfo " + 
                 "group by Ship_Type " +
                 "order by Ship_Type";
-
-            frmEdit f2 = new frmEdit();
-            dgvType.Rows.Clear();
+            
             cmd = new MySqlCommand(findClass, conn);
-            reader = cmd.ExecuteReader();
-            dgvType.ColumnCount = 1;
-            dgvType.Columns[0].Name = "Type";
-            while (reader.Read())
-                dgvType.Rows.Add(reader.GetString(0));
-            reader.Close();
+            adapter = new MySqlDataAdapter();
+            ds = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(ds);
+            ds.Tables[0].Columns[0].ColumnName = "Type";
+            dgvType.DataSource = ds.Tables[0];
         }
 
         private void loadClass(string type)
@@ -79,14 +88,13 @@ namespace Kancolle_Assistant
                 "order by Ship_No";
 
             shiptype = type;
-            dgvClass.Rows.Clear();
             cmd = new MySqlCommand(findClass, conn);
-            reader = cmd.ExecuteReader();
-            dgvClass.ColumnCount = 1;
-            dgvClass.Columns[0].Name = "Class";
-            while (reader.Read())
-                dgvClass.Rows.Add(reader.GetString(0));
-            reader.Close();
+            adapter = new MySqlDataAdapter();
+            ds = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(ds);
+            ds.Tables[0].Columns[0].ColumnName = "Class";
+            dgvClass.DataSource = ds.Tables[0];
         }
 
         private void loadShip(string Class)
@@ -96,14 +104,13 @@ namespace Kancolle_Assistant
                 "order by Ship_No";
 
             shipclass = Class;
-            dgvShip.Rows.Clear();
             cmd = new MySqlCommand(findShip, conn);
-            reader = cmd.ExecuteReader();
-            dgvShip.ColumnCount = 1;
-            dgvShip.Columns[0].Name = "Ship";
-            while (reader.Read())
-                dgvShip.Rows.Add(reader.GetString(0));
-            reader.Close();
+            adapter = new MySqlDataAdapter();
+            ds = new DataSet();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(ds);
+            ds.Tables[0].Columns[0].ColumnName = "Ship";
+            dgvShip.DataSource = ds.Tables[0];
         }
 
         public void defStats(string ship)
@@ -205,13 +212,13 @@ namespace Kancolle_Assistant
                 loadType();
                 loadClass("Battleship");
                 loadShip("Nagato");
+
+                defStats("Nagato");
+                loadStats("Nagato");
+                loadRecipe("Battleship", "Nagato");
             }
             else
                 MessageBox.Show("Try to connect.");
-
-            defStats("Nagato");
-            loadStats("Nagato");
-            loadRecipe("Battleship", "Nagato");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -229,7 +236,6 @@ namespace Kancolle_Assistant
             stats.LOS = lblLOS.Text;
             stats.RANGE = lblRange.Text;
             stats.LUCK = lblLuck.Text;
-            //stats.BUILDTIME = lblTime.Text;
             stats.SHIP_NAME = lblName.Text;
             stats.NUM = ShipNo;
             stats.SHIPTYPE = shiptype;
@@ -246,7 +252,6 @@ namespace Kancolle_Assistant
             f2.AIRCRAFT = stats.AIRCRAFT;
             f2.SPEED = stats.SPEED;
             f2.RANGE = stats.RANGE;
-            //f2.BUILDTIME = stats.BUILDTIME;
 
             assignVal(stats.FIREPOWER);
             f2.FPinit = init;
