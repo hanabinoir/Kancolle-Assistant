@@ -24,10 +24,9 @@ namespace Kancolle_Assistant
 
         private void connection()
         {
-            string connStr = "SERVER=ec2-52-20-54-9.compute-1.amazonaws.com; " +
-                "DATABASE=f_user24; " +
-                "UID=f_user24; " +
-                "PASSWORD=f_user24;";
+            string connStr = "SERVER=localhost; " +
+                "DATABASE=kancolle; " +
+                "UID=root;";
             conn = new MySqlConnection(connStr);
             try
             {

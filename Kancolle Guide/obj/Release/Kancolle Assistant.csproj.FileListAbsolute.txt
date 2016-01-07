@@ -1,0 +1,18 @@
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Release\Kancolle Assistant.exe.config
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Release\Kancolle Assistant.exe
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Release\Kancolle Assistant.pdb
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\bin\Release\MySql.Data.dll
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle Assistant.csprojResolveAssemblyReference.cache
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle_Assistant.frmCard.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle_Assistant.frmHome.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle_Assistant.frmEdit.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle_Assistant.frmLogin.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle_Assistant.frmOrdHist.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle_Assistant.frmPwdReset.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle_Assistant.frmReg.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle_Assistant.frmAcct.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle_Assistant.Properties.Resources.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle_Assistant.frmShop.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle Assistant.csproj.GenerateResource.Cache
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle Assistant.exe
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Release\Kancolle Assistant.pdb

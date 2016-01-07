@@ -27,10 +27,9 @@ namespace Kancolle_Assistant
 
         private void connection()
         {
-            string connStr = "SERVER=ec2-52-20-54-9.compute-1.amazonaws.com; " +
-                "DATABASE=f_user24; " +
-                "UID=f_user24; " +
-                "PASSWORD=f_user24;";
+            string connStr = "SERVER=localhost; " +
+                "DATABASE=kancolle; " +
+                "UID=root;";
             conn = new MySqlConnection(connStr);
             try
             {
@@ -55,10 +54,10 @@ namespace Kancolle_Assistant
             if(email != "")
                 btnLogin.Text = "Log out";
 
-            string res = "SELECT * FROM f_user24.Resources;";
-            string cons = "SELECT * FROM f_user24.Consumables;";
-            string recmd = "SELECT * FROM f_user24.Recommended;";
-            string special = "SELECT * FROM f_user24.Special;";
+            string res = "SELECT * FROM kancolle.Resources;";
+            string cons = "SELECT * FROM kancolle.Consumables;";
+            string recmd = "SELECT * FROM kancolle.Recommended;";
+            string special = "SELECT * FROM kancolle.Special;";
 
             cmd = new MySqlCommand(res, conn);
             reader = cmd.ExecuteReader();
