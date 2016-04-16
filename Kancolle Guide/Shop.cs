@@ -11,15 +11,14 @@ using System.Windows.Forms;
 
 namespace Kancolle_Assistant
 {
-    public partial class frmShop : Form
+    public partial class frmItmes : Form
     {
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataReader reader;
-        private string email = "", cardNum = "";
         private int total;
 
-        public frmShop()
+        public frmItmes()
         {
             InitializeComponent();
             connection();
@@ -51,13 +50,11 @@ namespace Kancolle_Assistant
 
         private void frmShop_Load(object sender, EventArgs e)
         {
-            if(email != "")
-                btnLogin.Text = "Log out";
-
             string res = "SELECT * FROM kancolle.Resources;";
             string cons = "SELECT * FROM kancolle.Consumables;";
             string recmd = "SELECT * FROM kancolle.Recommended;";
             string special = "SELECT * FROM kancolle.Special;";
+            
 
             cmd = new MySqlCommand(res, conn);
             reader = cmd.ExecuteReader();
@@ -134,76 +131,6 @@ namespace Kancolle_Assistant
             }
 
             lblPrice.Text += "$" + total.ToString();
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            frmLogin login = new frmLogin();
-            login.Show();
-            this.Close();
-        }
-
-        public string EMAIL { set { email = value; } }
-
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-            DialogResult res;
-
-            if (email == "")
-            {
-                res = MessageBox.Show("Do you want to go to the login page?",
-                    "Login Required", MessageBoxButtons.YesNo);
-                if (res == DialogResult.Yes)
-                    btnLogin_Click(sender, e);
-                
-            }
-            else
-            {
-                string findCard = "SELECT `Card_Num` FROM f_user24.KancollePayment " + 
-                    "where Email = '" + email + "';";
-                cmd = new MySqlCommand(findCard, conn);
-                reader = cmd.ExecuteReader();
-
-                if (!reader.HasRows)
-                {
-                    res = MessageBox.Show("Do you want to add a payment methdo?",
-                        "Payment Method Required", MessageBoxButtons.YesNo);
-                    if (res == DialogResult.Yes)
-                    {
-                        frmCard card = new frmCard();
-                        card.EMAIL = email;
-                        card.Show();
-                    }
-                }
-                else
-                    while(reader.Read())
-                        cardNum = reader.GetString(0);
-                reader.Close();
-
-                if (cardNum != "")
-                {
-                    res = MessageBox.Show("Payment total: $" + total.ToString(),
-                        "Order Review", MessageBoxButtons.YesNo);
-                    if (res == DialogResult.Yes)
-                    {
-                        string insertTrans = "INSERT INTO `f_user24`.`KancolleTrans` " +
-                            "(`Trans_No`, `Trans_Date`, `Amt`, `Card_Num`) VALUES " +
-                            "(null, '" + DateTime.Now + "', '" + total + "', '" +
-                            cardNum + "');";
-                        cmd = new MySqlCommand(insertTrans, conn);
-
-                        try
-                        {
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Transaction successful");
-                        }
-                        catch (MySqlException se)
-                        {
-                            MessageBox.Show(se.ToString());
-                        }
-                    }
-                }
-            }
         }
     }
 }

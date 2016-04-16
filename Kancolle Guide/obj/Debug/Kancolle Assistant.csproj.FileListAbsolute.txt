@@ -8,11 +8,16 @@ C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide
 C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Assistant.pdb
 C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmHome.resources
 C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmEdit.resources
-C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmLogin.resources
-C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmPwdReset.resources
-C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmReg.resources
-C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmAcct.resources
-C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmCard.resources
 C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle Assistant.csprojResolveAssemblyReference.cache
-C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmShop.resources
-C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmOrdHist.resources
+C:\Users\Yoeng\Documents\Douglas College\CSIS 3540\Kancolle Guide\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmItmes.resources
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\bin\Debug\Kancolle Assistant.exe.config
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\obj\Debug\Kancolle Assistant.exe
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\obj\Debug\Kancolle Assistant.pdb
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\bin\Debug\Kancolle Assistant.exe
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\bin\Debug\Kancolle Assistant.pdb
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\obj\Debug\Kancolle Assistant.csprojResolveAssemblyReference.cache
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmHome.resources
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmEdit.resources
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\obj\Debug\Kancolle_Assistant.Properties.Resources.resources
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\obj\Debug\Kancolle_Assistant.frmItmes.resources
+C:\Users\Yoeng\Documents\Visual Studio 2015\Projects\Kancolle Assistant\Kancolle Guide\obj\Debug\Kancolle Assistant.csproj.GenerateResource.Cache

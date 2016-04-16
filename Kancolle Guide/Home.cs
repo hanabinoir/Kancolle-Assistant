@@ -97,6 +97,12 @@ namespace Kancolle_Assistant
             dgvClass.DataSource = ds.Tables[0];
         }
 
+        private void btnChkItems_Click(object sender, EventArgs e)
+        {
+            frmItmes Items = new frmItmes();
+            Items.Show();
+        }
+
         private void loadShip(string Class)
         {
             string findShip = "select Ship_Name from ShipInfo " +
@@ -372,18 +378,6 @@ namespace Kancolle_Assistant
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void logInToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmLogin f3 = new frmLogin();
-            f3.Show();
-        }
-
-        private void shopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmShop shop = new frmShop();
-            shop.Show();
         }
     }
 }

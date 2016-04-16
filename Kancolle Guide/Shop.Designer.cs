@@ -1,6 +1,6 @@
 ﻿namespace Kancolle_Assistant
 {
-    partial class frmShop
+    partial class frmItmes
     {
         /// <summary>
         /// Required designer variable.
@@ -53,8 +53,6 @@
             this.colEffSpecial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceSpecial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QtySpecial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnPay = new System.Windows.Forms.Button();
             this.btnGetPrice = new System.Windows.Forms.Button();
             this.lblPrice = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -287,26 +285,6 @@
             this.QtySpecial.HeaderText = "Quantity";
             this.QtySpecial.Name = "QtySpecial";
             // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(16, 307);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 1;
-            this.btnLogin.Text = "Log in";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // btnPay
-            // 
-            this.btnPay.Location = new System.Drawing.Point(399, 307);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(75, 23);
-            this.btnPay.TabIndex = 2;
-            this.btnPay.Text = "Pay";
-            this.btnPay.UseVisualStyleBackColor = true;
-            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
-            // 
             // btnGetPrice
             // 
             this.btnGetPrice.Location = new System.Drawing.Point(318, 307);
@@ -320,24 +298,22 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(180, 312);
+            this.lblPrice.Location = new System.Drawing.Point(399, 312);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(37, 13);
             this.lblPrice.TabIndex = 4;
             this.lblPrice.Text = "Total: ";
             // 
-            // frmShop
+            // frmItmes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 342);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.btnGetPrice);
-            this.Controls.Add(this.btnPay);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tabControl1);
-            this.Name = "frmShop";
-            this.Text = "Shop";
+            this.Name = "frmItmes";
+            this.Text = "Items";
             this.Load += new System.EventHandler(this.frmShop_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -360,8 +336,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.DataGridView dgvRes;
         private System.Windows.Forms.DataGridView dgvCons;
         private System.Windows.Forms.DataGridView dgvRecm;

@@ -33,7 +33,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data">
       <HintPath>..\..\MySql.Data.dll</HintPath>
     </Reference>
@@ -49,12 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Card.Designer.cs">
-      <DependentUpon>Card.cs</DependentUpon>
-    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,43 +60,13 @@
     <Compile Include="Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OrdHist.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrdHist.Designer.cs">
-      <DependentUpon>OrdHist.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reg.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reg.Designer.cs">
-      <DependentUpon>Reg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Acct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Acct.Designer.cs">
-      <DependentUpon>Acct.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PwdReset.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PwdReset.Designer.cs">
-      <DependentUpon>PwdReset.cs</DependentUpon>
-    </Compile>
     <Compile Include="Shop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,29 +74,11 @@
       <DependentUpon>Shop.cs</DependentUpon>
     </Compile>
     <Compile Include="Statistics.cs" />
-    <EmbeddedResource Include="Card.resx">
-      <DependentUpon>Card.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OrdHist.resx">
-      <DependentUpon>OrdHist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PwdReset.resx">
-      <DependentUpon>PwdReset.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reg.resx">
-      <DependentUpon>Reg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Acct.resx">
-      <DependentUpon>Acct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

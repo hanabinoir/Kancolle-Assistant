@@ -72,17 +72,13 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblNo = new System.Windows.Forms.Label();
             this.btnImg = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnChkItems = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShip)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvType
@@ -489,44 +485,22 @@
             this.btnImg.TabIndex = 3;
             this.btnImg.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
+            // btnChkItems
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(692, 24);
-            this.menuStrip1.TabIndex = 51;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuToolStripMenuItem
-            // 
-            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shopToolStripMenuItem,
-            this.logInToolStripMenuItem});
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.menuToolStripMenuItem.Text = "Menu";
-            // 
-            // shopToolStripMenuItem
-            // 
-            this.shopToolStripMenuItem.Name = "shopToolStripMenuItem";
-            this.shopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.shopToolStripMenuItem.Text = "Shop";
-            this.shopToolStripMenuItem.Click += new System.EventHandler(this.shopToolStripMenuItem_Click);
-            // 
-            // logInToolStripMenuItem
-            // 
-            this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
-            this.logInToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.logInToolStripMenuItem.Text = "Account";
-            this.logInToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
+            this.btnChkItems.Location = new System.Drawing.Point(12, 6);
+            this.btnChkItems.Name = "btnChkItems";
+            this.btnChkItems.Size = new System.Drawing.Size(75, 23);
+            this.btnChkItems.TabIndex = 51;
+            this.btnChkItems.Text = "Check Items";
+            this.btnChkItems.UseVisualStyleBackColor = true;
+            this.btnChkItems.Click += new System.EventHandler(this.btnChkItems_Click);
             // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 389);
+            this.Controls.Add(this.btnChkItems);
             this.Controls.Add(this.lblNo);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.tabControl1);
@@ -534,8 +508,6 @@
             this.Controls.Add(this.dgvShip);
             this.Controls.Add(this.dgvClass);
             this.Controls.Add(this.dgvType);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmHome";
             this.Text = "Kancolle Guide";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -547,8 +519,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,10 +568,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shopToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logInToolStripMenuItem;
+        private System.Windows.Forms.Button btnChkItems;
     }
 }
 
