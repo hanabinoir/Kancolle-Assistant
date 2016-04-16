@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Kancolle-Assistant
 CSIS 3540 Project
 
@@ -8,3 +9,6 @@ The "kancolle" folder is the database for MySQL. Please place it on a local serv
 The parts for ships statistics, recipe and shopping is working now.
 
 The account and payment system is not completed yet. Running those systems can result in errors.
+=======
+# Kancolle-Assistant-Beta
+>>>>>>> origin/master
